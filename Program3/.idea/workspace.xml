@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5ed4332-a986-43d9-a2c5-b75381467fff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Program2/atm.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Switching/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/META-INF/Program2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/PaymentHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/PaymentHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/buildISO/paymentISO/PaymentISO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/buildISO/paymentISO/PaymentISO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/PaymentHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/PaymentHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/PaymentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/buildISO/paymentISO/PaymentISO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/buildISO/paymentISO/PaymentISO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Switching/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Switching/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Switching/target/classes/META-INF/switching.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Switching/target/test-classes/META-INF/switching.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568447103106</updated>
       <workItem from="1568447106842" duration="6724000" />
-      <workItem from="1568459673399" duration="2337000" />
+      <workItem from="1568459673399" duration="2346000" />
     </task>
     <servers />
   </component>

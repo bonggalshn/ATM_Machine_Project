@@ -44,6 +44,17 @@ public class PaymentHelper {
                 String message = internet.payInquiry(accountNumber, pinNumber);
                 ISOMsg isoMessage = isoUtil.stringToISO(message);
 
+
+
+                if(!isoMessage.getString(39).equals("00")){
+                    if(isoMessage.getString(39).equals("51")){
+                        System.out.println("Saldo anda tidak mencukupi");
+                        return;
+                    }
+                    System.out.println("Transaksi tidak dapat dilakukan");
+                    return;
+                }
+
                 System.out.println("\n\n--PEMBAYARAN--------------------");
                 System.out.println("Anda akan melakukan pembayaran kepada: ");
                 System.out.println("Nama    : " + isoMessage.getString(102));

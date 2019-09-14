@@ -33,16 +33,12 @@ public class PaymentService {
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             company = accountService.findByAccountNumber(internetCompanyNumber);
             customer = accountService.findByAccountNumber(accountNumber);
-//            if (company!=null){
-//                customer.setBalance(customer.getBalance()-amount);
-//                company.setBalance(company.getBalance()+amount);
-//
-//                accountService.update(customer);
-//                accountService.update(company);
-//            }
+            if(customer.getBalance()>amount){
+                status = true;
+            }
         }
 
-        String response = paymentISO.internetPaymentInquiryResponse(accountNumber, pinNumber, amount, company.getAccountName());
+        String response = paymentISO.internetPaymentInquiryResponse(accountNumber, amount, company.getAccountName(), status);
         System.out.println("Payment service: " + response);
         return response;
     }

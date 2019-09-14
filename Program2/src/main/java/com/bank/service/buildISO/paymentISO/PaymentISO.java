@@ -8,9 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PaymentISO {
-    public String internetPaymentInquiryResponse(String accountNumber, String pinNumber, int amount, String internetCompanyName) {
-        if (internetCompanyName.length()>20)
-            internetCompanyName = internetCompanyName.substring(0,20);
+    public String internetPaymentInquiryResponse(String accountNumber, int amount, String internetCompanyName, boolean status) {
+        if (internetCompanyName.length() > 20)
+            internetCompanyName = internetCompanyName.substring(0, 20);
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -21,7 +21,7 @@ public class PaymentISO {
 
             isoMsg.set(2, accountNumber);
             isoMsg.set(3, "300000");
-            isoMsg.set(4, ""+amount);
+            isoMsg.set(4, "" + amount);
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -31,7 +31,10 @@ public class PaymentISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            isoMsg.set(39, "nn");
+            if (status)
+                isoMsg.set(39, "00");
+            else
+                isoMsg.set(39, "51");
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
@@ -50,8 +53,8 @@ public class PaymentISO {
     }
 
     public String internetPaymentResponse(String accountNumber, int amount, String internetCompanyName, boolean status) {
-        if (internetCompanyName.length()>20)
-            internetCompanyName = internetCompanyName.substring(0,20);
+        if (internetCompanyName.length() > 20)
+            internetCompanyName = internetCompanyName.substring(0, 20);
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -62,7 +65,7 @@ public class PaymentISO {
 
             isoMsg.set(2, accountNumber);
             isoMsg.set(3, "300000");
-            isoMsg.set(4, ""+amount);
+            isoMsg.set(4, "" + amount);
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -72,7 +75,7 @@ public class PaymentISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            if(status==true)
+            if (status == true)
                 isoMsg.set(39, "yy");
             else
                 isoMsg.set(39, "nn");
@@ -93,7 +96,7 @@ public class PaymentISO {
         }
     }
 
-    public String rejectPayment(){
+    public String rejectPayment() {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -108,7 +111,7 @@ public class PaymentISO {
 
             byte[] result = isoMsg.pack();
             return new String(result);
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
