@@ -253,6 +253,11 @@ public class TransferHelper {
     private void transferExternalProcess(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
+        if(!isoMessage.getString(39).equals("00")){
+            System.out.println("Transaksi tidak dapat dilakukan");
+            return;
+        }
+
 //        isoUtil.printISOMessage(isoMessage);
         System.out.println("\n\n--------------------------------");
         System.out.println("Anda akan melakukan transfer berikut.");

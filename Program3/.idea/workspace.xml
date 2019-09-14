@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5ed4332-a986-43d9-a2c5-b75381467fff" name="Default Changelist" comment="" />
+    <list default="true" id="d5ed4332-a986-43d9-a2c5-b75381467fff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Program2/atm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Switching/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/META-INF/Program2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Switching/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Switching/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Switching/target/classes/META-INF/switching.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Switching/target/test-classes/META-INF/switching.kotlin_module" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +28,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1Qoq4GBEmHv0hVYLBaqvXRuha4k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -58,10 +82,22 @@
       <option name="presentableId" value="Default" />
       <updated>1568447103106</updated>
       <workItem from="1568447106842" duration="6724000" />
+      <workItem from="1568459673399" duration="2337000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

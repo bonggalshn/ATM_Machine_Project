@@ -20,11 +20,45 @@ public class TransferExternalService {
         this.accountService = accountService;
     }
 
-    public String processExternalInquiry(String message) {
-        ISOMsg isoMessage = isoUtil.stringToISO(message);
+    //    public String processExternalInquiry(String message) {
+//        ISOMsg isoMessage = isoUtil.stringToISO(message);
+//
+//        String accountNumber = isoMessage.getString(2);
+//        String pinNumber = isoMessage.getString(52);
+//        int amount = Integer.parseInt(isoMessage.getString(4));
+//        String beneficiaryNumber = isoMessage.getString(102);
+//        String bankCode = isoMessage.getString(127);
+//
+//        boolean status = false;
+//        Customer issuer;
+//        if (accountService.checkAccount(accountNumber, pinNumber)) {
+//            issuer = accountService.findByAccountNumber(accountNumber);
+//            if (issuer.getBalance() > amount) {
+//                status = true;
+//            }
+//        }
+//
+//        String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, bankCode, status);
+//
+//        String externalResponse = ClientHelper.sendData(response, "http://localhost:8082/switching/transferInquiry/transfer");
+//
+//        return externalResponse;
+//    }
 
+    public String processExternalInquiry(String message) {
+
+        ISOMsg isoMessage = isoUtil.stringToISO(message);
         String accountNumber = isoMessage.getString(2);
         String pinNumber = isoMessage.getString(52);
+
+        String externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
+        isoMessage = isoUtil.stringToISO(externalResponse);
+
+
+        if (!isoMessage.getString(39).equals("00")) {
+            return externalResponse;
+        }
+
         int amount = Integer.parseInt(isoMessage.getString(4));
         String beneficiaryNumber = isoMessage.getString(102);
         String bankCode = isoMessage.getString(127);
@@ -39,10 +73,7 @@ public class TransferExternalService {
         }
 
         String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, bankCode, status);
-
-        String externalResponse = ClientHelper.sendData(response, "http://localhost:8082/switching/transferInquiry/transfer");
-
-        return externalResponse;
+        return response;
     }
 
     private String buildISOExternalInquiryResponse(String accountNumber, int amount, String beneficiaryNumber, String bankCode, boolean status) {
@@ -115,7 +146,7 @@ public class TransferExternalService {
             accountService.update(issuer);
             status = true;
         } catch (Exception e) {
-            System.out.println("Update issuer balance: "+e.getMessage());
+            System.out.println("Update issuer balance: " + e.getMessage());
             status = false;
         }
 
