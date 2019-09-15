@@ -48,7 +48,8 @@ public class ClientHelper {
                 break;
 
             case 3:
-
+                PurchaseHelper purchaseHelper = new PurchaseHelper(accountNumber, pinNumber);
+                purchaseHelper.purchaseMain();
                 break;
 
             case 4:
