@@ -82,3 +82,13 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:835)
+2019-09-15 21:42:55,949 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 26692 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 21:42:55,951 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 21:42:55,951 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 21:43:00,214 INFO com.bank.AtmApplication [main] Started AtmApplication in 4.584 seconds (JVM running for 5.648)
+2019-09-15 21:43:31,924 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '2';
+2019-09-15 21:43:44,312 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '2';
+2019-09-15 21:48:31,807 INFO com.bank.test.test2 [http-nio-8080-exec-5] Login success for account '2';
+2019-09-15 21:50:08,908 INFO com.bank.test.test2 [http-nio-8080-exec-9] Login success for account '2';
+2019-09-15 21:50:20,033 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '2';
+2019-09-15 21:51:35,586 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '2';

@@ -160,8 +160,5 @@ public class PurchaseHelper {
             }
         } while (true);
 
-//        System.out.println("\n\n\nPurchase Result");
-//        System.out.println(message);
-//        isoUtil.printISOMessage(isoUtil.stringToISO(message));
     }
 }

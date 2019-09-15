@@ -1,5 +1,6 @@
 package com.bank.client.purchase;
 
+import com.bank.Util.ISOUtil;
 import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Purchase;
 import org.jpos.iso.ISOMsg;
@@ -16,6 +17,7 @@ public class PhoneCreditPurchase implements Purchase {
     private String accountNumber;
     private String pinNumber;
     private String productCode;
+    private ISOUtil isoUtil = new ISOUtil();
 
     public PhoneCreditPurchase(String phoneNumber, int amount, String productCode) {
         this.amount = amount;
@@ -35,6 +37,7 @@ public class PhoneCreditPurchase implements Purchase {
 
     @Override
     public String purchase(String message) {
+        message = buildISO(message);
         String response = ClientHelper.sendData(message, "http://localhost:8080/purchase/phoneCredit/process");
         return response;
     }
@@ -77,6 +80,8 @@ public class PhoneCreditPurchase implements Purchase {
         }
     }
     private String buildISO(String message){
+        ISOMsg isoMessage = isoUtil.stringToISO(message);
+        isoUtil.printISOMessage(isoMessage);
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -85,16 +90,16 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0200");
 
-            isoMsg.set(2, accountNumber);
+            isoMsg.set(2, isoMessage.getString(2));
             isoMsg.set(3, "181000");
-            isoMsg.set(4, amount + "");
+            isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
             isoMsg.set(13, new SimpleDateFormat("MMdd").format(new Date()));
             isoMsg.set(15, new SimpleDateFormat("MMdd").format(new Date()));
             isoMsg.set(18, "0000");
-            isoMsg.set(32, "00000000000");
+            isoMsg.set(32, isoMessage.getString(32));
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
             isoMsg.set(41, "12340001");
@@ -103,9 +108,9 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(54, "0");
-            isoMsg.set(62, "0");
+            isoMsg.set(62, isoMessage.getString(62));
             isoMsg.set(63, "0");
-            isoMsg.set(102, "1234567890");
+            isoMsg.set(102, isoMessage.getString(102));
 
             byte[] result = isoMsg.pack();
             return new String(result);
