@@ -43,8 +43,8 @@ public class InternetPayment implements Payment {
     }
 
     @Override
-    public String payInquiry(String accountNumber, String pinNumber) {
-        int bill = 100000; // get from 3rd party
+    public String payInquiry(String accountNumber, String pinNumber, int bill) {
+        // The bill was receive from the third party
 
         String message = buildISOInquiry(accountNumber,pinNumber,bill);
         String response = ClientHelper.sendData(message, "http://localhost:8080/payment/internet/inquiry");

@@ -30,7 +30,7 @@ public class WithdrawalHelper {
         System.out.println("\n\n--Tarik Tunai----------");
         System.out.println("1. 50.000              2. 100.000");
         System.out.println("3. 200.000             4. 400.000");
-        System.out.println("5. Jumlah lainnya      6. Menu sebelumnya");
+        System.out.println("5. Jumlah lainnya      6. Batal");
     }
 
     private void withdrawalCase(int entry) {

@@ -22,7 +22,6 @@ public class TransferController {
 
     @PostMapping(value = "/internalInquiry", produces = "application/json; charset=UTF-8")
     public String transferInternalInquiry(@RequestBody String message) {
-//        System.out.println(message);
         return transferService.processInquiry(message);
     }
 

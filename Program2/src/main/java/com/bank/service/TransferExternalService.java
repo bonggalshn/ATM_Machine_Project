@@ -20,40 +20,21 @@ public class TransferExternalService {
         this.accountService = accountService;
     }
 
-    //    public String processExternalInquiry(String message) {
-//        ISOMsg isoMessage = isoUtil.stringToISO(message);
-//
-//        String accountNumber = isoMessage.getString(2);
-//        String pinNumber = isoMessage.getString(52);
-//        int amount = Integer.parseInt(isoMessage.getString(4));
-//        String beneficiaryNumber = isoMessage.getString(102);
-//        String bankCode = isoMessage.getString(127);
-//
-//        boolean status = false;
-//        Customer issuer;
-//        if (accountService.checkAccount(accountNumber, pinNumber)) {
-//            issuer = accountService.findByAccountNumber(accountNumber);
-//            if (issuer.getBalance() > amount) {
-//                status = true;
-//            }
-//        }
-//
-//        String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, bankCode, status);
-//
-//        String externalResponse = ClientHelper.sendData(response, "http://localhost:8082/switching/transferInquiry/transfer");
-//
-//        return externalResponse;
-//    }
-
     public String processExternalInquiry(String message) {
 
         ISOMsg isoMessage = isoUtil.stringToISO(message);
         String accountNumber = isoMessage.getString(2);
         String pinNumber = isoMessage.getString(52);
 
-        String externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
-        isoMessage = isoUtil.stringToISO(externalResponse);
-
+        String externalResponse = null;
+        try {
+            externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
+            isoMessage = isoUtil.stringToISO(externalResponse);
+            System.out.println(externalResponse);
+        }catch (Exception e){
+            System.out.println("error external inquiry:\n"+e.getMessage());
+            return null;
+        }
 
         if (!isoMessage.getString(39).equals("00")) {
             return externalResponse;
@@ -61,6 +42,7 @@ public class TransferExternalService {
 
         int amount = Integer.parseInt(isoMessage.getString(4));
         String beneficiaryNumber = isoMessage.getString(102);
+        String beneficiaryName = isoMessage.getString(103);
         String bankCode = isoMessage.getString(127);
 
         boolean status = false;
@@ -72,11 +54,11 @@ public class TransferExternalService {
             }
         }
 
-        String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, bankCode, status);
+        String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, beneficiaryName, bankCode, status);
         return response;
     }
 
-    private String buildISOExternalInquiryResponse(String accountNumber, int amount, String beneficiaryNumber, String bankCode, boolean status) {
+    private String buildISOExternalInquiryResponse(String accountNumber, int amount, String beneficiaryNumber, String beneficiaryName, String bankCode, boolean status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -111,7 +93,7 @@ public class TransferExternalService {
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, beneficiaryNumber);//number
-            isoMsg.set(103, "0");//name
+            isoMsg.set(103, beneficiaryName);//name
             isoMsg.set(125, "0");
             isoMsg.set(127, bankCode);
 

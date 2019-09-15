@@ -14,6 +14,7 @@ public class Client {
                 helper.processMenu(entry);
             } catch (Exception e) {
                 System.out.println("Masukan salah.");
+                System.out.println("Main client: "+e.getMessage());
             }
         } while (entry != 6);
     }

@@ -73,10 +73,10 @@ public class TransferService {
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
 
-            if (!status)
-                isoMsg.set(39, "nn");
+            if (status)
+                isoMsg.set(39, "00");
             else
-                isoMsg.set(39, "yy");
+                isoMsg.set(39, "51");
 
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
@@ -154,10 +154,10 @@ public class TransferService {
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
 
-            if (!status)
-                isoMsg.set(39, "nn");
+            if (status)
+                isoMsg.set(39, "00");
             else
-                isoMsg.set(39, "yy");
+                isoMsg.set(39, "51");
 
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");

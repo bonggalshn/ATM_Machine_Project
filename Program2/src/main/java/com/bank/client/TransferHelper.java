@@ -16,20 +16,27 @@ public class TransferHelper {
         this.accountNumber = accountNumber;
         this.pinNumber = pinNumber;
 
-        transferMenu();
-        try {
-            System.out.print("Entry: ");
-            int entry = Integer.parseInt(ClientHelper.read());
-            transferCase(entry);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        int entry = 0;
+        do {
+            try {
+                transferMenu();
+
+                System.out.print("Entry: ");
+                entry = Integer.parseInt(ClientHelper.read());
+                transferCase(entry);
+                if (entry == 3)
+                    break;
+            } catch (Exception e) {
+                System.out.println("Transfer entry error:\n" + e.getMessage());
+            }
+        } while (true);
     }
 
     private void transferMenu() {
         System.out.println("\n--Transfer----------");
-        System.out.println("1. Ke Bank Sama");
+        System.out.println("1. Ke Sesama Bank");
         System.out.println("2. Ke Bank Lain");
+        System.out.println("3. Batal");
         System.out.println("----------------------");
     }
 
@@ -38,11 +45,22 @@ public class TransferHelper {
         switch (entry) {
             case 1:
                 message = transferInquiry();
+                if (message.equals(null)) {
+                    System.out.println("Transaksi tidak dapat dilakukan");
+                    break;
+                }
                 transferProcess(message);
                 break;
             case 2:
                 message = transferExternalInquiry();
+                if(message.equals(null)){
+                    System.out.println("Transaksi tidak dapat dilakukan.");
+                    break;
+                }
                 transferExternalProcess(message);
+                break;
+            case 3:
+                System.out.println("Transaksi dibatalkan");
                 break;
             default:
                 System.out.println("Masukan salah.");
@@ -63,7 +81,7 @@ public class TransferHelper {
     private void transferProcess(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
-        if (isoMessage.getString(39).equals("nn")) {
+        if (!isoMessage.getString(39).equals("00")) {
             System.out.println("Transaksi tidak dapat dilakukan");
             return;
         }
@@ -83,6 +101,7 @@ public class TransferHelper {
         System.out.println("2. Tidak");
 
         int entry = 0;
+        here:
         do {
             try {
                 System.out.print("Entry: ");
@@ -91,20 +110,21 @@ public class TransferHelper {
                     case 1:
                         String transferMessage = buildISOTransfer(rekTujuan, Integer.parseInt(jumlah));
                         String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/internal");
-//                        System.out.println(response);
                         String result = isoUtil.stringToISO(response).getString(39);
 
-                        if (result.equals("yy")) {
+                        if (result.equals("00")) {
                             System.out.println("Transaksi Berhasil");
                         } else {
                             System.out.println("Transaksi Gagal");
                         }
-                        break;
+                        break here;
                     case 2:
                         System.out.println("Transaksi dibatalkan.");
+                        break here;
+                    default:
+                        System.out.println("Masukan salah");
                         break;
                 }
-                break;
             } catch (Exception e) {
                 System.out.println("Masukan salah");
             }
@@ -204,7 +224,8 @@ public class TransferHelper {
 
         String message = buildISOInquiryExternal(tujuan, jumlah, bankCode);
 
-        return ClientHelper.sendData(message, "http://localhost:8080/transfer/externalInquiry");
+        String response = ClientHelper.sendData(message, "http://localhost:8080/transfer/externalInquiry");
+        return response;
     }
 
     private String buildISOInquiryExternal(String tujuan, int jumlah, String bankCode) {
@@ -253,12 +274,13 @@ public class TransferHelper {
     private void transferExternalProcess(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
-        if(!isoMessage.getString(39).equals("00")){
+        if (!isoMessage.getString(39).equals("00")) {
             System.out.println("Transaksi tidak dapat dilakukan");
             return;
         }
 
 //        isoUtil.printISOMessage(isoMessage);
+
         System.out.println("\n\n--------------------------------");
         System.out.println("Anda akan melakukan transfer berikut.");
         System.out.println("Tujuan       : " + isoMessage.getString(103));
@@ -270,31 +292,37 @@ public class TransferHelper {
         System.out.println("1. Ya");
         System.out.println("2. Tidak");
 
-        try {
-            System.out.print("Entry: ");
-            int entry = Integer.parseInt(ClientHelper.read());
-            switch (entry) {
-                case 1:
-                    String transferMessage = buildISOExternalTransfer(message);
-                    String response = ClientHelper.sendData(transferMessage,"http://localhost:8080/transfer/external");
+        here:
+        do {
+            try {
+                System.out.print("Entry: ");
+                int entry = Integer.parseInt(ClientHelper.read());
+                switch (entry) {
+                    case 1:
+                        String transferMessage = buildISOExternalTransfer(message);
+                        String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/external");
 
-                    ISOMsg isoResponse = isoUtil.stringToISO(response);
+                        ISOMsg isoResponse = isoUtil.stringToISO(response);
 
-                    if (isoResponse.getString(39).equals("00"))
-                        System.out.println("\n\nTransaksi berhasil");
-                    else
-                        System.out.println("\n\nTransaksi gagal");
-                    break;
-                case 2:
-                    System.out.println("Transaksi dibatalkan.");
-                    break;
+                        if (isoResponse.getString(39).equals("00"))
+                            System.out.println("\n\nTransaksi berhasil");
+                        else
+                            System.out.println("\n\nTransaksi gagal");
+                        break here;
+                    case 2:
+                        System.out.println("Transaksi dibatalkan.");
+                        break here;
+                    default:
+                        System.out.println("Masukan salah");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("Masukan salah.");
             }
-        } catch (Exception e) {
-            System.out.println("Masukan salah.");
-        }
+        }while (true);
     }
 
-    private String buildISOExternalTransfer(String message){
+    private String buildISOExternalTransfer(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
