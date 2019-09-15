@@ -1,0 +1,4 @@
+2019-09-15 19:32:25,172 INFO com.switching.SwitchingApplication [main] Starting SwitchingApplication on Bonggals-MBP with PID 99004 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Switching/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Switching)
+2019-09-15 19:32:25,174 DEBUG com.switching.SwitchingApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 19:32:25,174 INFO com.switching.SwitchingApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 19:32:28,163 INFO com.switching.SwitchingApplication [main] Started SwitchingApplication in 3.372 seconds (JVM running for 4.399)

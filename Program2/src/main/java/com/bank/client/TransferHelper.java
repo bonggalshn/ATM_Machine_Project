@@ -116,7 +116,7 @@ public class TransferHelper {
                         ISOMsg result = isoUtil.stringToISO(response);
 
                         if (result.getString(39).equals("00")) {
-                            logger.info("Account '{}' perform CASH WITHDARWAL for {}",result.getString(2),Integer.parseInt(result.getString(4)));
+                            logger.info("Account '{}' perform '{}' CASH WITHDARWAL",result.getString(2),Integer.parseInt(result.getString(4)));
                             System.out.println("Transaksi Berhasil");
                         } else {
                             System.out.println("Transaksi Gagal");
@@ -145,7 +145,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, this.accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "390000");
             isoMsg.set(4, jumlah + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -186,7 +186,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, this.accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "400000");
             isoMsg.set(4, jumlah + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -242,7 +242,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, this.accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "390000");
             isoMsg.set(4, jumlah + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -337,7 +337,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, isoMessage.getString(2));
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "400000");
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");

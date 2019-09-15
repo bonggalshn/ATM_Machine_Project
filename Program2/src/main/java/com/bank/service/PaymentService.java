@@ -19,7 +19,6 @@ public class PaymentService {
 
     public String processInternetInquiry(String message) {
 
-        System.out.println("processInternetInquiry:" + message);
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
         String accountNumber = isoMessage.getString(2);
@@ -39,7 +38,6 @@ public class PaymentService {
         }
 
         String response = paymentISO.internetPaymentInquiryResponse(accountNumber, amount, company.getAccountName(), status);
-        System.out.println("Payment service: " + response);
         return response;
     }
 

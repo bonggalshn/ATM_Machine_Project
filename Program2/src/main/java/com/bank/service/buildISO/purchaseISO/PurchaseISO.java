@@ -21,7 +21,7 @@ public class PurchaseISO {
             isoMsg.setMTI("0210");
 
             isoMsg.set(2, customer.getAccountNumber());
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "381000");
             isoMsg.set(4, "" + amount);
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -67,7 +67,7 @@ public class PurchaseISO {
             isoMsg.setMTI("0210");
 
             isoMsg.set(2, isoMessage.getString(2));
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "181000");
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");

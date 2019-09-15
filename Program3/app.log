@@ -1,0 +1,54 @@
+2019-09-15 19:32:06,946 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 98908 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3)
+2019-09-15 19:32:06,948 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 19:32:06,948 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 19:32:08,324 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-09-15 19:32:08,324 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-15 19:32:08,457 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-09-15 19:32:08,568 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-09-15 19:32:08,854 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-09-15 19:32:08,905 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-15 19:32:08,953 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.11.Final}
+2019-09-15 19:32:08,954 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-09-15 19:32:09,063 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-15 19:32:09,166 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-09-15 19:32:10,242 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.831 seconds (JVM running for 4.576)
+2019-09-15 19:32:46,653 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown initiated...
+2019-09-15 19:32:46,674 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown completed.
+2019-09-15 19:33:05,609 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 99166 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3)
+2019-09-15 19:33:05,611 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 19:33:05,611 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 19:33:06,909 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-09-15 19:33:06,909 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-15 19:33:07,009 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-09-15 19:33:07,137 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-09-15 19:33:07,389 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-09-15 19:33:07,431 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-15 19:33:07,475 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.11.Final}
+2019-09-15 19:33:07,476 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-09-15 19:33:07,590 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-15 19:33:07,744 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-09-15 19:33:08,789 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.565 seconds (JVM running for 4.291)
+2019-09-15 19:44:34,212 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown initiated...
+2019-09-15 19:44:34,228 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown completed.
+2019-09-15 19:44:38,526 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 3111 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3)
+2019-09-15 19:44:38,528 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 19:44:38,528 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 19:44:39,776 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2019-09-15 19:44:39,776 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-15 19:44:39,881 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2019-09-15 19:44:39,991 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-09-15 19:44:40,215 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-09-15 19:44:40,256 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-15 19:44:40,300 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.11.Final}
+2019-09-15 19:44:40,301 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2019-09-15 19:44:40,407 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-15 19:44:40,525 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-09-15 19:44:41,647 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.693 seconds (JVM running for 4.439)
+2019-09-15 19:51:07,950 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown initiated...
+2019-09-15 19:51:07,982 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown completed.

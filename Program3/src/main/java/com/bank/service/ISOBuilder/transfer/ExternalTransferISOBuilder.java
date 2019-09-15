@@ -73,7 +73,7 @@ public class ExternalTransferISOBuilder {
             isoMsg.setMTI("0210");
 
             isoMsg.set(2, isoMessage.getString(2));
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, isoMessage.getString(3));
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");

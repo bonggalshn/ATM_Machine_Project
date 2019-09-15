@@ -49,7 +49,7 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "381000");
             isoMsg.set(4, amount + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -86,7 +86,7 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "181000");
             isoMsg.set(4, amount + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
