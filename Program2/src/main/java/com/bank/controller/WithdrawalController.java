@@ -19,7 +19,6 @@ public class WithdrawalController {
 
     @PostMapping(value = "/withdraw", produces = "application/json; charset=UTF-8")
     public String withdraw(@RequestBody String message){
-        System.out.println("WithdrawalController: "+message);
         return withdrawalService.process(message);
     }
 }

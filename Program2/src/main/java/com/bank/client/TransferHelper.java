@@ -3,12 +3,15 @@ package com.bank.client;
 import com.bank.Util.ISOUtil;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TransferHelper {
+    private static final Logger logger = LoggerFactory.getLogger(TransferHelper.class);
     private String accountNumber, pinNumber;
     private ISOUtil isoUtil = new ISOUtil();
 
@@ -110,9 +113,10 @@ public class TransferHelper {
                     case 1:
                         String transferMessage = buildISOTransfer(rekTujuan, Integer.parseInt(jumlah));
                         String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/internal");
-                        String result = isoUtil.stringToISO(response).getString(39);
+                        ISOMsg result = isoUtil.stringToISO(response);
 
-                        if (result.equals("00")) {
+                        if (result.getString(39).equals("00")) {
+                            logger.info("Account '{}' perform CASH WITHDARWAL for {}",result.getString(2),Integer.parseInt(result.getString(4)));
                             System.out.println("Transaksi Berhasil");
                         } else {
                             System.out.println("Transaksi Gagal");

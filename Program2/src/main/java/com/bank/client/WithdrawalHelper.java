@@ -1,15 +1,19 @@
 package com.bank.client;
 
 import com.bank.Util.ISOUtil;
+import com.bank.test.test2;
 import org.jpos.iso.ISOMsg;
 
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class WithdrawalHelper {
+    private static final Logger logger = LoggerFactory.getLogger(WithdrawalHelper.class);
     private String accountNumber, pinNumber;
     private ISOUtil isoUtil= new ISOUtil();
 
@@ -65,11 +69,11 @@ public class WithdrawalHelper {
         try {
             String message = buildISO(amount);
 
-            System.out.println(message);
             String response = ClientHelper.sendData(message.toString(),"http://localhost:8080/withdrawal/withdraw");
 
             ISOMsg isoMessange = isoUtil.stringToISO(response);
-            if(isoMessange.getString(39).equals("yy")){
+            if(isoMessange.getString(39).equals("00")){
+                logger.info("Cash withdrawal, Account '{}', amount '{}'",isoMessange.getString(2),Integer.parseInt(isoMessange.getString(4)));
                 System.out.println("Tarik tunai berhasil.");
             }else {
                 System.out.println("Transaksi tidak dapat dilakukan.");
@@ -90,7 +94,7 @@ public class WithdrawalHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, this.accountNumber);
-            isoMsg.set(3, "300000");
+            isoMsg.set(3, "010000");
             isoMsg.set(4, jumlah + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");

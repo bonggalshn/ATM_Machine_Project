@@ -41,12 +41,12 @@ public class WithdrawalService {
             }
         }
 
-        String response = buildISO(accountNumber, status);
+        String response = buildISO(accountNumber, status, amount);
 
         return response;
     }
 
-    private String buildISO(String accountNumber, boolean status) {
+    private String buildISO(String accountNumber, boolean status, int amount) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -56,8 +56,8 @@ public class WithdrawalService {
             isoMsg.setMTI("0210");
 
             isoMsg.set(2, accountNumber);
-            isoMsg.set(3, "300000");
-            isoMsg.set(4, "0");
+            isoMsg.set(3, "010000");
+            isoMsg.set(4, amount+"");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -68,10 +68,10 @@ public class WithdrawalService {
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
 
-            if (!status)
-                isoMsg.set(39, "nn");
+            if (status)
+                isoMsg.set(39, "00");
             else
-                isoMsg.set(39, "yy");
+                isoMsg.set(39, "51");
 
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
