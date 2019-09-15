@@ -2,11 +2,15 @@ package com.bank.service;
 
 import com.bank.entity.Customer;
 import com.bank.repository.AccountRepository;
+import com.bank.test.test2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AccountService {
+    private static final Logger logger = LoggerFactory.getLogger(test2.class);
     private AccountRepository accountRepository;
 
     @Autowired
@@ -24,11 +28,18 @@ public class AccountService {
 
     public boolean checkAccount(String accountNumber, String pinNumber) {
         Customer customer = findByAccountNumber(accountNumber);
-        if (customer == null)
+        if (customer == null) {
+            logger.info("Account '{}' is not found;",accountNumber);
             return false;
+        }
+
         if (Integer.parseInt(customer.getPinNumber()) == Integer.parseInt(pinNumber))
-            return true;
+            {
+                logger.info("Login success for account '{}';",accountNumber);
+                return true;}
         else
-            return false;
+            {
+                logger.warn("Login failed for account '{}';",accountNumber);
+                return false;}
     }
 }

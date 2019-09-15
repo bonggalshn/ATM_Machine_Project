@@ -1,0 +1,8 @@
+2019-09-15 18:02:33,331 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 82435 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 18:02:33,333 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 18:02:33,333 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 18:02:36,461 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.506 seconds (JVM running for 4.325)
+2019-09-15 18:03:17,150 INFO com.bank.test.test2 [http-nio-8080-exec-1] Account '3' is not found;
+2019-09-15 18:03:40,152 INFO com.bank.test.test2 [http-nio-8080-exec-3] Account '121212' is not found;
+2019-09-15 18:04:00,326 WARN com.bank.test.test2 [http-nio-8080-exec-5] Login failed for account '1';
+2019-09-15 18:04:40,379 INFO com.bank.test.test2 [http-nio-8080-exec-7] Login success for account '1';
