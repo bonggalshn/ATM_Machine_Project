@@ -1,7 +1,8 @@
 package com.bank.client;
 
+import com.bank.Util.CommonUtil;
 import com.bank.Util.ISOUtil;
-import com.bank.test.test2;
+import com.bank.Util.MQUtil;
 import org.jpos.iso.ISOMsg;
 
 import org.jpos.iso.packager.GenericPackager;
@@ -67,9 +68,12 @@ public class WithdrawalHelper {
 
     public void withdrawal(int amount) {
         try {
+            MQUtil mqUtil = new MQUtil();
             String message = buildISO(amount);
 
-            String response = ClientHelper.sendData(message.toString(),"http://localhost:8080/withdrawal/withdraw");
+//            String response = ClientHelper.sendData(message.toString(),"http://localhost:8080/withdrawal/withdraw");
+            mqUtil.sendToExchange("mainExchange",message);
+            String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
 
             ISOMsg isoMessange = isoUtil.stringToISO(response);
             if(isoMessange.getString(39).equals("00")){
@@ -110,6 +114,7 @@ public class WithdrawalHelper {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(102, "0");
 

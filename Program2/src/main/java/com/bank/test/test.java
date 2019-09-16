@@ -37,6 +37,7 @@ public class test {
     }
 
     public void sendToExchange(String message) {
+
         String json = "{\n" +
                 "\t\"properties\":{},\n" +
                 "\t\"routing_key\":\"main_route\",\n" +

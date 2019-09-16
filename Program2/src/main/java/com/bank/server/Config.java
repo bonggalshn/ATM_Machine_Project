@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 @Profile({"rpc"})
 @Configuration
 public class Config {
+
     @Profile("client")
     private static class ClientConfig {
 

@@ -2,7 +2,11 @@ package com.bank.server;
 
 import com.bank.Util.ISOUtil;
 import com.bank.Util.MQUtil;
-import com.bank.controller.BalanceController;
+import com.bank.client.PaymentHelper;
+import com.bank.client.PurchaseHelper;
+import com.bank.client.WithdrawalHelper;
+import com.bank.client.interfaceClient.Purchase;
+import com.bank.controller.*;
 import com.bank.service.BalanceService;
 import com.rabbitmq.client.*;
 import org.jpos.iso.ISOMsg;
@@ -16,8 +20,18 @@ import java.net.Socket;
 
 public class Server {
     private ISOUtil isoUtil = new ISOUtil();
+
     @Autowired
     private BalanceController balanceController;
+    @Autowired
+    private WithdrawalController withdrawalController;
+    @Autowired
+    private PaymentController paymentController;
+    @Autowired
+    private PurchaseController purchaseController;
+    @Autowired
+    private TransferController transferController;
+
 
     @RabbitListener(queues = "mainQueue")
     public void getResponse(byte[] message){
@@ -32,10 +46,12 @@ public class Server {
         switch (processingCode){
             case "300000":
                 response = balanceController.BalanceInfo(message);
-                sendISOViaSocket(response);
+                break;
+            case "010000":
+                response = withdrawalController.withdraw(message);
                 break;
         }
-//        System.out.println("response: "+response);
+        sendISOViaSocket(response);
     }
 
     private void sendISOViaSocket(String message){
