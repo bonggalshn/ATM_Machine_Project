@@ -1,0 +1,140 @@
+2019-09-15 18:02:33,331 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 82435 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 18:02:33,333 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 18:02:33,333 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 18:02:36,461 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.506 seconds (JVM running for 4.325)
+2019-09-15 18:03:17,150 INFO com.bank.test.test2 [http-nio-8080-exec-1] Account '3' is not found;
+2019-09-15 18:03:40,152 INFO com.bank.test.test2 [http-nio-8080-exec-3] Account '121212' is not found;
+2019-09-15 18:04:00,326 WARN com.bank.test.test2 [http-nio-8080-exec-5] Login failed for account '1';
+2019-09-15 18:04:40,379 INFO com.bank.test.test2 [http-nio-8080-exec-7] Login success for account '1';
+2019-09-15 18:07:23,550 INFO com.bank.test.test2 [http-nio-8080-exec-9] Login success for account '1';
+2019-09-15 18:14:34,968 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '1';
+2019-09-15 18:15:04,851 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '1';
+2019-09-15 18:15:15,698 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 85435 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 18:15:15,700 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 18:15:15,702 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 18:15:19,102 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.953 seconds (JVM running for 4.861)
+2019-09-15 18:15:31,575 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '1';
+2019-09-15 18:15:31,632 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '1', amount '0'
+2019-09-15 18:16:48,396 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '2';
+2019-09-15 18:16:48,441 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '2', amount '0'
+2019-09-15 19:02:17,845 INFO com.bank.test.test2 [http-nio-8080-exec-5] Login success for account '1';
+2019-09-15 19:27:16,798 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 97838 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 19:27:16,801 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 19:27:16,801 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 19:27:20,336 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.962 seconds (JVM running for 5.052)
+2019-09-15 19:28:49,683 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '1';
+2019-09-15 19:29:02,103 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '1';
+2019-09-15 19:29:43,515 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8080-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.bank.service.TransferExternalService.processExternalInquiry(TransferExternalService.java:39)
+	at com.bank.controller.TransferController.transferExternalInquiry(TransferController.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2019-09-15 21:42:55,949 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 26692 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 21:42:55,951 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 21:42:55,951 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 21:43:00,214 INFO com.bank.AtmApplication [main] Started AtmApplication in 4.584 seconds (JVM running for 5.648)
+2019-09-15 21:43:31,924 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '2';
+2019-09-15 21:43:44,312 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '2';
+2019-09-15 21:48:31,807 INFO com.bank.test.test2 [http-nio-8080-exec-5] Login success for account '2';
+2019-09-15 21:50:08,908 INFO com.bank.test.test2 [http-nio-8080-exec-9] Login success for account '2';
+2019-09-15 21:50:20,033 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '2';
+2019-09-15 21:51:35,586 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '2';
+2019-09-15 22:03:58,405 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 31397 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:03:58,407 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:03:58,408 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:04:01,967 INFO com.bank.AtmApplication [main] Started AtmApplication in 4.072 seconds (JVM running for 5.043)
+2019-09-15 22:04:14,141 INFO com.bank.test.test2 [http-nio-8080-exec-3] Login success for account '1';
+2019-09-15 22:42:58,759 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 40735 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:42:58,762 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:42:58,762 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:43:01,802 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.412 seconds (JVM running for 4.222)
+2019-09-15 22:44:06,188 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 41043 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:44:06,189 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:44:06,190 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:44:09,268 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.401 seconds (JVM running for 4.155)
+2019-09-15 22:44:09,281 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 41043 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:44:09,281 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:44:09,281 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:44:09,292 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.bank.AtmApplication.main(AtmApplication.java:14)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:203)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 8 common frames omitted
+2019-09-15 22:47:07,329 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 41746 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:47:07,331 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:47:07,335 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:47:10,411 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.357 seconds (JVM running for 4.119)
+2019-09-15 22:48:20,505 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator [background-preinit] Loaded expression factory via original TCCL
+2019-09-15 22:48:20,659 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 42004 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:48:20,681 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:48:20,682 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:48:23,249 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.005 seconds (JVM running for 3.728)
+2019-09-15 22:48:58,058 INFO com.bank.test.test2 [http-nio-8080-exec-1] Login success for account '1';
+2019-09-15 22:49:41,739 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MBP with PID 42297 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-15 22:49:41,740 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-15 22:49:41,741 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-15 22:49:44,655 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.211 seconds (JVM running for 3.973)

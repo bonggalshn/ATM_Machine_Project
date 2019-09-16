@@ -2,6 +2,21 @@ package com.bank.client;
 
 public class Client {
     private static ClientHelper helper = new ClientHelper();
+    private static String server;
+    private static int port;
+
+    public Client(String server, int port) {
+        this.server = server;
+        this.port = port;
+    }
+
+    public static String getServer(){
+        return server;
+    }
+
+    public static String getPort(){
+        return port+"";
+    }
 
     public static void main(String[] args) {
         int entry = 0;

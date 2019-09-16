@@ -26,9 +26,13 @@ public class BalanceService {
         String accountNumber = isoMessage.getString(2);
         String pinNumber = isoMessage.getString(52);
 
+        String address[] = isoMessage.getString(54).split(":");
+//        System.out.println(address[0]);
+//        System.out.println(address[1]);
+
         boolean status = false;
         Customer customer;
-        System.out.println("Account number: "+accountNumber);
+//        System.out.println("Account number: "+accountNumber);
         int balance=0;
         if(accountService.checkAccount(accountNumber,pinNumber)){
             status = true;
@@ -36,10 +40,10 @@ public class BalanceService {
             balance = customer.getBalance();
         }
 
-        return buildISO(accountNumber,status,balance);
+        return buildISO(isoMessage,balance, status);
     }
 
-    private String buildISO(String accountNumber, boolean status, int balance){
+    private String buildISO(ISOMsg isoMessage, int balance, boolean status){
         try{
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -48,7 +52,7 @@ public class BalanceService {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0210");
 
-            isoMsg.set(2, accountNumber);
+            isoMsg.set(2, isoMessage.getString(2));
             isoMsg.set(3, "300000");
             isoMsg.set(4, "0");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
@@ -61,17 +65,17 @@ public class BalanceService {
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
             if(status){
-                isoMsg.set(39, "yy");
+                isoMsg.set(39, "00");
                 isoMsg.set(62, balance+"");
             }
             else{
-                isoMsg.set(39, "nn");
+                isoMsg.set(39, "05");
                 isoMsg.set(62, "0");
             }
             isoMsg.set(41, "12340001");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(49, "840");
-
+            isoMsg.set(54,isoMessage.getString(54));
             isoMsg.set(102, "0");
 
             byte[] result = isoMsg.pack();

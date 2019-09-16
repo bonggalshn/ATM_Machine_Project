@@ -1,6 +1,8 @@
 package com.bank.client;
 
+import com.bank.Util.CommonUtil;
 import com.bank.Util.ISOUtil;
+import com.bank.Util.MQUtil;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
 
@@ -10,14 +12,23 @@ import java.util.Date;
 
 public class BalanceHelper {
     private ISOUtil isoUtil = new ISOUtil();
+    private MQUtil mqUtil = new MQUtil();
 
     public void inquiry(String accountNumber, String pinNumber){
         String isoMessage = buildISO(accountNumber, pinNumber);
-        String result = ClientHelper.sendData(isoMessage, "http://localhost:8080/balance/info");
+
+
+//        String result = ClientHelper.sendData(isoMessage, "http://localhost:8080/balance/info");
+
+
+        // Send to message broker queue
+        mqUtil.sendToExchange("mainExchange",isoMessage);
+        String result = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
         ISOMsg isoResult = isoUtil.stringToISO(result);
 
         System.out.println("\n--Balance Inquiry--------");
-        if(isoResult.getString(39).equals("yy"))
+        if(isoResult.getString(39).equals("00"))
             System.out.println("Balance: "+isoResult.getString(62));
         else
             System.out.println("Transaksi tidak dapat dilakukan");
@@ -48,6 +59,7 @@ public class BalanceHelper {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(49, "360");
             isoMsg.set(52, pinNumber);
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(102, "0");
 
