@@ -479,3 +479,235 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 2019-09-16 15:00:38,989 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '2', amount '50000'
 2019-09-16 15:01:28,090 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '2';
 2019-09-16 15:01:28,109 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '2', amount '150000'
+2019-09-16 15:27:00,112 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 18626 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 15:27:00,113 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 15:27:00,113 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 15:27:03,166 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.274 seconds (JVM running for 9.034)
+2019-09-16 15:29:34,690 INFO com.bank.service.AccountService [http-nio-8080-exec-1] Login success for account '1';
+2019-09-16 15:29:39,898 INFO com.bank.client.TransferHelper [main] Account '1' perform '1' CASH WITHDARWAL
+2019-09-16 15:35:15,867 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 20210 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 15:35:15,870 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 15:35:15,870 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 15:35:19,062 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.489 seconds (JVM running for 9.16)
+2019-09-16 15:35:19,173 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 15:36:44,167 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 15:39:10,061 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 15:40:23,426 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 21191 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 15:40:23,428 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 15:40:23,429 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 15:40:26,886 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.687 seconds (JVM running for 9.41)
+2019-09-16 15:40:36,183 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 15:45:13,598 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '2';
+2019-09-16 15:51:15,837 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 15:52:01,818 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 23416 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 15:52:01,820 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 15:52:01,820 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 15:52:04,832 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.254 seconds (JVM running for 9.471)
+2019-09-16 15:52:13,366 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:06:56,377 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:12:18,373 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:13:10,204 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 27413 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:13:10,205 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:13:10,206 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:13:13,315 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.48 seconds (JVM running for 9.415)
+2019-09-16 16:13:26,723 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:16:48,931 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 28116 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:16:48,932 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:16:48,932 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:16:51,921 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.21 seconds (JVM running for 8.848)
+2019-09-16 16:17:00,351 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:17:00,398 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '1', amount '50000'
+2019-09-16 16:17:08,520 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:18:18,327 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 28418 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:18:18,328 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:18:18,328 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:18:20,835 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.72 seconds (JVM running for 8.302)
+2019-09-16 16:18:54,567 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 28537 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:18:54,568 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:18:54,568 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:18:57,637 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.3 seconds (JVM running for 8.948)
+2019-09-16 16:20:14,749 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 28797 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:20:14,750 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:20:14,751 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:20:17,459 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.929 seconds (JVM running for 8.537)
+2019-09-16 16:22:38,080 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 29262 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:22:38,081 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:22:38,081 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:22:40,618 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.783 seconds (JVM running for 8.388)
+2019-09-16 16:22:40,713 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:23:15,301 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 29393 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:23:15,302 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:23:15,302 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:23:17,818 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.734 seconds (JVM running for 8.327)
+2019-09-16 16:23:18,201 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:23:45,293 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 29484 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:23:45,294 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:23:45,294 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:23:47,816 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.739 seconds (JVM running for 8.448)
+2019-09-16 16:26:53,882 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 30104 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:26:53,883 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:26:53,883 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:26:57,567 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.949 seconds (JVM running for 9.642)
+2019-09-16 16:27:49,923 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 30299 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:27:49,924 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:27:49,924 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:27:52,884 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.189 seconds (JVM running for 8.957)
+2019-09-16 16:28:19,441 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:31:19,261 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 30979 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:31:19,262 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:31:19,262 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:31:22,009 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.049 seconds (JVM running for 8.716)
+2019-09-16 16:31:25,042 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:33:39,136 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 31618 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:33:39,137 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:33:39,137 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:33:42,885 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.994 seconds (JVM running for 9.745)
+2019-09-16 16:33:42,997 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:39:59,479 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 32823 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:39:59,481 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:39:59,481 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:40:02,691 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.467 seconds (JVM running for 9.132)
+2019-09-16 16:40:03,672 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:50:19,251 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 34791 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:50:19,252 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:50:19,252 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:50:22,457 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.458 seconds (JVM running for 9.343)
+2019-09-16 16:50:32,813 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:56:32,582 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 35992 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:56:32,584 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:56:32,584 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:56:35,568 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.243 seconds (JVM running for 8.875)
+2019-09-16 16:56:38,107 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 16:59:02,017 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 36477 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 16:59:02,019 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 16:59:02,019 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 16:59:05,358 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.744 seconds (JVM running for 9.509)
+2019-09-16 16:59:15,689 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:02:15,578 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 37109 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:02:15,580 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:02:15,580 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:02:19,029 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.756 seconds (JVM running for 9.454)
+2019-09-16 17:02:21,933 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:02:33,955 WARN com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login failed for account '2';
+2019-09-16 17:02:54,018 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 37230 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:02:54,019 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:02:54,019 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:02:56,629 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.817 seconds (JVM running for 8.816)
+2019-09-16 17:03:07,012 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:07:12,770 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 38058 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:07:12,772 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:07:12,772 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:07:15,708 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.169 seconds (JVM running for 8.789)
+2019-09-16 17:07:45,256 WARN com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login failed for account '2';
+2019-09-16 17:07:51,261 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:14:31,672 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 39436 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:14:31,675 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:14:31,675 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:14:34,529 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.08 seconds (JVM running for 8.814)
+2019-09-16 17:14:45,040 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:17:15,955 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 39964 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:17:15,957 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:17:15,957 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:17:18,946 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.494 seconds (JVM running for 9.339)
+2019-09-16 17:17:22,665 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '2';
+2019-09-16 17:19:18,488 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 40376 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:19:18,490 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:19:18,490 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:19:21,485 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.223 seconds (JVM running for 8.87)
+2019-09-16 17:19:23,418 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '2';
+2019-09-16 17:20:01,169 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 40519 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:20:01,171 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:20:01,171 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:20:03,885 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.954 seconds (JVM running for 8.624)
+2019-09-16 17:20:57,101 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 40701 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:20:57,102 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:20:57,103 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:20:59,989 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.119 seconds (JVM running for 8.721)
+2019-09-16 17:21:24,153 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:22:45,411 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41051 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:22:45,412 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:22:45,412 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:22:48,232 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.039 seconds (JVM running for 8.651)
+2019-09-16 17:23:25,945 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41191 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:23:25,948 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:23:25,948 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:23:28,813 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.137 seconds (JVM running for 8.855)
+2019-09-16 17:24:17,339 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41360 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:24:17,340 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:24:17,341 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:24:20,583 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.513 seconds (JVM running for 9.298)
+2019-09-16 17:25:00,729 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41507 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:25:00,730 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:25:00,730 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:25:03,387 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.887 seconds (JVM running for 8.53)
+2019-09-16 17:25:40,253 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41639 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:25:40,254 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:25:40,254 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:25:43,640 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.711 seconds (JVM running for 9.363)
+2019-09-16 17:25:49,592 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:26:39,066 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41841 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:26:39,068 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:26:39,069 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:26:42,334 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.52 seconds (JVM running for 9.128)
+2019-09-16 17:27:05,632 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 41938 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:27:05,633 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:27:05,633 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:27:08,433 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.104 seconds (JVM running for 8.743)
+2019-09-16 17:27:33,188 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42033 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:27:33,189 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:27:33,190 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:27:35,668 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.697 seconds (JVM running for 8.281)
+2019-09-16 17:28:09,460 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42165 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:28:09,461 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:28:09,461 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:28:11,948 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.7 seconds (JVM running for 8.403)
+2019-09-16 17:28:36,023 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42259 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:28:36,024 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:28:36,024 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:28:38,496 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.689 seconds (JVM running for 8.311)
+2019-09-16 17:29:30,934 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42450 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:29:30,935 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:29:30,935 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:29:33,451 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.733 seconds (JVM running for 8.423)
+2019-09-16 17:30:45,474 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42693 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:30:45,475 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:30:45,475 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:30:47,951 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.688 seconds (JVM running for 8.275)
+2019-09-16 17:31:20,304 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 42817 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:31:20,306 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:31:20,306 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:31:23,118 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.094 seconds (JVM running for 8.994)
+2019-09-16 17:33:17,096 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 43211 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:33:17,098 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:33:17,098 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:33:19,562 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.69 seconds (JVM running for 8.307)
+2019-09-16 17:34:03,535 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 43357 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:34:03,536 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:34:03,536 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:34:06,061 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.744 seconds (JVM running for 8.368)
+2019-09-16 17:34:07,401 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:35:20,971 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator [background-preinit] Loaded expression factory via original TCCL
+2019-09-16 17:35:21,052 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 43620 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:35:21,056 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:35:21,056 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:35:24,284 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.58 seconds (JVM running for 9.409)
+2019-09-16 17:36:24,627 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:37:44,813 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 44081 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:37:44,814 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:37:44,814 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:37:47,824 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.252 seconds (JVM running for 9.266)
+2019-09-16 17:37:56,661 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:39:25,677 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 44426 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:39:25,679 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:39:25,679 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:39:28,222 INFO com.bank.AtmApplication [main] Started AtmApplication in 2.766 seconds (JVM running for 8.371)
+2019-09-16 17:39:31,520 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:43:35,205 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 45227 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 17:43:35,207 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 17:43:35,207 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 17:43:39,164 INFO com.bank.AtmApplication [main] Started AtmApplication in 4.213 seconds (JVM running for 9.899)
+2019-09-16 17:43:48,945 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:43:50,647 INFO com.bank.client.TransferHelper [main] Account '1' perform '1' CASH WITHDARWAL
+2019-09-16 17:45:15,519 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:45:25,335 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '1';
+2019-09-16 17:45:26,748 INFO com.bank.client.TransferHelper [main] Account '1' perform '3' CASH WITHDARWAL

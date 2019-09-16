@@ -4,6 +4,7 @@ import com.bank.Util.ISOUtil;
 import com.bank.entity.Customer;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
@@ -15,6 +16,7 @@ public class TransferService {
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
 
+    @Autowired
     public TransferService(AccountService accountService) {
         this.accountService = accountService;
     }
@@ -45,13 +47,13 @@ public class TransferService {
             }
         }
 
-        String response = buildISOInquiry(accountNumber, status, beneficiaryAccount, "001", amount);
+        String response = buildISOInquiry(isoMessage, customer, beneficiaryAccount, status);
 
-        System.out.println("ISO MEssage: " + isoMessage);
+//        System.out.println("ISO Message: " + isoMessage);
         return response;
     }
 
-    private String buildISOInquiry(String accountNumber, boolean status, Customer beneficiaryAccount, String beneficiaryBankCode, int amount) {
+    private String buildISOInquiry(ISOMsg isoMessage, Customer customer, Customer beneficiary, boolean status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -60,9 +62,9 @@ public class TransferService {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0210");
 
-            isoMsg.set(2, accountNumber);
+            isoMsg.set(2, customer.getAccountNumber());
             isoMsg.set(3, "390000");
-            isoMsg.set(4, amount + "");
+            isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -83,19 +85,20 @@ public class TransferService {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
-            isoMsg.set(100, "001");
+            isoMsg.set(100, isoMessage.getString(100));
 
-
-            if (beneficiaryAccount == null) {
+            if (beneficiary == null) {
                 isoMsg.set(102, "0");
                 isoMsg.set(103, "0");
             } else {
-                isoMsg.set(102, beneficiaryAccount.getAccountNumber());
-                isoMsg.set(103, beneficiaryAccount.getAccountName());
+                isoMsg.set(102, beneficiary.getAccountNumber());
+                isoMsg.set(103, beneficiary.getAccountName());
             }
+
             isoMsg.set(125, "0");
-            isoMsg.set(127, beneficiaryBankCode);
+            isoMsg.set(127, isoMessage.getString(127));
 
             byte[] result = isoMsg.pack();
             return new String(result);
@@ -128,11 +131,11 @@ public class TransferService {
             status = false;
         }
 
-        return buildISOTransfer(sender.getAccountNumber(), status, beneficiary, "001", amount);
+        return buildISOTransfer(isoMessage, beneficiary, status);
 
     }
 
-    private String buildISOTransfer(String accountNumber, boolean status, Customer beneficiaryAccount, String beneficiaryBankCode, int amount) {
+    private String buildISOTransfer(ISOMsg isoMessage, Customer benefeiciary, boolean status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -141,9 +144,9 @@ public class TransferService {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0210");
 
-            isoMsg.set(2, accountNumber);
+            isoMsg.set(2, isoMessage.getString(2));
             isoMsg.set(3, "400000");
-            isoMsg.set(4, amount + "");
+            isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -164,17 +167,18 @@ public class TransferService {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
-            if (beneficiaryAccount == null) {
+            if (benefeiciary == null) {
                 isoMsg.set(102, "0");
                 isoMsg.set(103, "0");
             } else {
-                isoMsg.set(102, beneficiaryAccount.getAccountNumber());
-                isoMsg.set(103, beneficiaryAccount.getAccountName());
+                isoMsg.set(102, benefeiciary.getAccountNumber());
+                isoMsg.set(103, benefeiciary.getAccountName());
             }
             isoMsg.set(125, "0");
-            isoMsg.set(127, beneficiaryBankCode);
+            isoMsg.set(127, isoMessage.getString(127));
 
             byte[] result = isoMsg.pack();
             return new String(result);

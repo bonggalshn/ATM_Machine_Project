@@ -1,21 +1,12 @@
 package com.bank.server;
 
 import com.bank.Util.ISOUtil;
-import com.bank.Util.MQUtil;
-import com.bank.client.PaymentHelper;
-import com.bank.client.PurchaseHelper;
-import com.bank.client.WithdrawalHelper;
-import com.bank.client.interfaceClient.Purchase;
 import com.bank.controller.*;
-import com.bank.service.BalanceService;
-import com.rabbitmq.client.*;
 import org.jpos.iso.ISOMsg;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.amqp.core.*;
 
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.net.Socket;
 
 public class Server {
@@ -25,10 +16,6 @@ public class Server {
     private BalanceController balanceController;
     @Autowired
     private WithdrawalController withdrawalController;
-    @Autowired
-    private PaymentController paymentController;
-    @Autowired
-    private PurchaseController purchaseController;
     @Autowired
     private TransferController transferController;
 
@@ -50,13 +37,18 @@ public class Server {
             case "010000":
                 response = withdrawalController.withdraw(message);
                 break;
+            case "390000":
+                response = transferController.transferInternalInquiry(message);
+                break;
+            case "400000":
+                response = transferController.transferInternal(message);
+                break;
         }
         sendISOViaSocket(response);
     }
 
     private void sendISOViaSocket(String message){
         try {
-
             ISOMsg isoMessage = isoUtil.stringToISO(message);
             String address[] = isoMessage.getString(54).split(":");
 
@@ -64,7 +56,6 @@ public class Server {
             DataOutputStream dout = new DataOutputStream(socket.getOutputStream());
 
             dout.writeUTF(message);
-
             dout.flush();
             dout.close();
             socket.close();

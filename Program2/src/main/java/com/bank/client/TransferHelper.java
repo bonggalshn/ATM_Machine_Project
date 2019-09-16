@@ -1,6 +1,8 @@
 package com.bank.client;
 
+import com.bank.Util.CommonUtil;
 import com.bank.Util.ISOUtil;
+import com.bank.Util.MQUtil;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
 import org.slf4j.Logger;
@@ -56,7 +58,7 @@ public class TransferHelper {
                 break;
             case 2:
                 message = transferExternalInquiry();
-                if(message.equals(null)){
+                if (message.equals(null)) {
                     System.out.println("Transaksi tidak dapat dilakukan.");
                     break;
                 }
@@ -72,13 +74,18 @@ public class TransferHelper {
     }
 
     private String transferInquiry() {
+        MQUtil mqUtil = new MQUtil();
         System.out.print("Masukkan nomor rekening pemindahbukuan: ");
         String tujuan = ClientHelper.read();
         System.out.print("Masukkan jumlah yang akan ditransfer: ");
         int amount = Integer.parseInt(ClientHelper.read());
         String message = buildISOInquiry(tujuan, amount);
 
-        return ClientHelper.sendData(message, "http://localhost:8080/transfer/internalInquiry");
+//        String response = ClientHelper.sendData(message, "http://localhost:8080/transfer/internalInquiry");
+        mqUtil.sendToExchange("mainExchange", message);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
+        return response;
     }
 
     private void transferProcess(String message) {
@@ -112,11 +119,17 @@ public class TransferHelper {
                 switch (entry) {
                     case 1:
                         String transferMessage = buildISOTransfer(rekTujuan, Integer.parseInt(jumlah));
-                        String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/internal");
+//                        String transferMessage = buildISOTransfer(isoMessage);
+//                        String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/internal");
+
+                        MQUtil mqUtil = new MQUtil();
+                        mqUtil.sendToExchange("mainExchange", transferMessage);
+                        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
                         ISOMsg result = isoUtil.stringToISO(response);
 
                         if (result.getString(39).equals("00")) {
-                            logger.info("Account '{}' perform '{}' CASH WITHDARWAL",result.getString(2),Integer.parseInt(result.getString(4)));
+                            logger.info("Account '{}' perform '{}' CASH WITHDARWAL", result.getString(2), Integer.parseInt(result.getString(4)));
                             System.out.println("Transaksi Berhasil");
                         } else {
                             System.out.println("Transaksi Gagal");
@@ -127,10 +140,11 @@ public class TransferHelper {
                         break here;
                     default:
                         System.out.println("Masukan salah");
-                        break;
+                        break here;
                 }
             } catch (Exception e) {
-                System.out.println("Masukan salah");
+                System.out.println("Masukan salah: " + e.getMessage());
+                break here;
             }
         } while (true);
     }
@@ -161,6 +175,7 @@ public class TransferHelper {
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
+            isoMsg.set(54, Client.getServer() + ":" + Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, tujuan);//rek tujuan
@@ -184,10 +199,10 @@ public class TransferHelper {
             ISOMsg isoMsg = new ISOMsg();
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0200");
-
+//            isoMsg.set(2, isoMessage.getString(2));
             isoMsg.set(2, this.accountNumber);
             isoMsg.set(3, "400000");
-            isoMsg.set(4, jumlah + "");
+            isoMsg.set(4, ""+jumlah);
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -198,10 +213,12 @@ public class TransferHelper {
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
             isoMsg.set(41, "12340001");
+            isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, tujuan);//rek tujuan
@@ -258,6 +275,7 @@ public class TransferHelper {
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
+            isoMsg.set(54, Client.getServer() + ":" + Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, tujuan);//rek tujuan
@@ -323,7 +341,7 @@ public class TransferHelper {
             } catch (Exception e) {
                 System.out.println("Masukan salah.");
             }
-        }while (true);
+        } while (true);
     }
 
     private String buildISOExternalTransfer(String message) {

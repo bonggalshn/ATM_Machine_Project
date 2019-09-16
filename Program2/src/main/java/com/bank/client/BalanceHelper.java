@@ -23,6 +23,7 @@ public class BalanceHelper {
 
         // Send to message broker queue
         mqUtil.sendToExchange("mainExchange",isoMessage);
+        System.out.println(Client.getPort());
         String result = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
 
         ISOMsg isoResult = isoUtil.stringToISO(result);

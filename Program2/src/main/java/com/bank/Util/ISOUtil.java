@@ -40,7 +40,7 @@ public class ISOUtil {
             return isoMsg;
 
         }catch (Exception e){
-            System.out.println("ISOUTIL Exception: "+e.getMessage());
+            System.out.println("ISOUTIL Exception: \n"+e);
             return isoMsg;
         }
     }
