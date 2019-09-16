@@ -37,12 +37,12 @@ public class PaymentService {
             }
         }
 
-        String response = paymentISO.internetPaymentInquiryResponse(accountNumber, amount, company.getAccountName(), status);
+        String response = paymentISO.internetPaymentInquiryResponse(isoMessage, company.getAccountName(), status);
         return response;
     }
 
     public String processInternet(String message) {
-        System.out.println("processInternet" + message);
+//        System.out.println("processInternet" + message);
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
         String accountNumber = isoMessage.getString(2);
@@ -68,7 +68,7 @@ public class PaymentService {
         }
 
 
-        String response = paymentISO.internetPaymentResponse(accountNumber, amount, company.getAccountName(),status);
+        String response = paymentISO.internetPaymentResponse(isoMessage, company.getAccountName(),status);
         System.out.println("Payment service: " + response);
         return response;
     }

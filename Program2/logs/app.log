@@ -774,3 +774,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 2019-09-16 18:48:12,603 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
 2019-09-16 18:48:15,960 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.584 seconds (JVM running for 9.286)
 2019-09-16 18:48:26,546 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '2';
+2019-09-16 18:57:48,845 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 62781 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-16 18:57:48,847 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 18:57:48,847 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-16 18:57:53,044 INFO com.bank.AtmApplication [main] Started AtmApplication in 4.625 seconds (JVM running for 10.552)
+2019-09-16 18:58:17,615 INFO com.bank.service.AccountService [http-nio-8080-exec-1] Login success for account '2';

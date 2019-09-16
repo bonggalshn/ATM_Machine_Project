@@ -85,7 +85,7 @@ public class PaymentHelper {
                 String response = internet.pay(message);
                 ISOMsg isoMsgResponse = isoUtil.stringToISO(response);
 
-                if (isoMsgResponse.getString(39).equals("yy")) {
+                if (isoMsgResponse.getString(39).equals("00")) {
                     System.out.println("Transaksi berhasil");
                 } else {
                     System.out.println("Transaksi gagal");

@@ -20,6 +20,8 @@ public class Server {
     private TransferController transferController;
     @Autowired
     private PurchaseController purchaseController;
+    @Autowired
+    private PaymentController paymentController;
 
 
     @RabbitListener(queues = "mainQueue")
@@ -57,6 +59,12 @@ public class Server {
                 break;
             case "181000":
                 response = purchaseController.phoneCreditPorcess(message);
+                break;
+            case "380000":
+                response = paymentController.internetPaymentInquiry(message);
+                break;
+            case "180000":
+                response = paymentController.internetPayment(message);
                 break;
         }
         sendISOViaSocket(response);

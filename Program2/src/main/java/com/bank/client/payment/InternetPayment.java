@@ -1,6 +1,7 @@
 package com.bank.client.payment;
 
 import com.bank.Util.ISOUtil;
+import com.bank.client.Client;
 import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Payment;
 import org.jpos.iso.ISOMsg;
@@ -78,6 +79,7 @@ public class InternetPayment implements Payment {
             isoMsg.set(49, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, pinNumber);
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(102, "1234567890");
 
@@ -125,7 +127,7 @@ public class InternetPayment implements Payment {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
-            isoMsg.set(54, "0");
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(63, "0");
             isoMsg.set(102, "1234567890");
