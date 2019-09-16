@@ -40,7 +40,8 @@ public class ExternalTransferISOBuilder {
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
-            isoMsg.set(49, "840");
+            isoMsg.set(49, "360");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
 
@@ -94,7 +95,8 @@ public class ExternalTransferISOBuilder {
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
-            isoMsg.set(49, "840");
+            isoMsg.set(49, "360");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, isoMessage.getString(102));

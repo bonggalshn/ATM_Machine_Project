@@ -21,7 +21,7 @@ public class BalanceHelper {
 //        String result = ClientHelper.sendData(isoMessage, "http://localhost:8080/balance/info");
 
 
-        // Send to message broker queue
+        // Send to message broker queue --------------------------------------------------------------------------------
         mqUtil.sendToExchange("mainExchange",isoMessage);
         System.out.println(Client.getPort());
         String result = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));

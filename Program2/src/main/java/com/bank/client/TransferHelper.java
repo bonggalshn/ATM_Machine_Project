@@ -202,7 +202,7 @@ public class TransferHelper {
 //            isoMsg.set(2, isoMessage.getString(2));
             isoMsg.set(2, this.accountNumber);
             isoMsg.set(3, "400000");
-            isoMsg.set(4, ""+jumlah);
+            isoMsg.set(4, "" + jumlah);
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -218,7 +218,7 @@ public class TransferHelper {
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
-            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
+            isoMsg.set(54, Client.getServer() + ":" + Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, tujuan);//rek tujuan
@@ -245,7 +245,10 @@ public class TransferHelper {
 
         String message = buildISOInquiryExternal(tujuan, jumlah, bankCode);
 
-        String response = ClientHelper.sendData(message, "http://localhost:8080/transfer/externalInquiry");
+//        String response = ClientHelper.sendData(message, "http://localhost:8080/transfer/externalInquiry");
+        MQUtil mqUtil = new MQUtil();
+        mqUtil.sendToExchange("mainExchange", message);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
         return response;
     }
 
@@ -259,7 +262,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, this.accountNumber);
-            isoMsg.set(3, "390000");
+            isoMsg.set(3, "391000");
             isoMsg.set(4, jumlah + "");
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -322,7 +325,10 @@ public class TransferHelper {
                 switch (entry) {
                     case 1:
                         String transferMessage = buildISOExternalTransfer(message);
-                        String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/external");
+//                        String response = ClientHelper.sendData(transferMessage, "http://localhost:8080/transfer/external");
+                        MQUtil mqUtil = new MQUtil();
+                        mqUtil.sendToExchange("mainExchange", transferMessage);
+                        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
 
                         ISOMsg isoResponse = isoUtil.stringToISO(response);
 
@@ -355,7 +361,7 @@ public class TransferHelper {
             isoMsg.setMTI("0200");
 
             isoMsg.set(2, isoMessage.getString(2));
-            isoMsg.set(3, "400000");
+            isoMsg.set(3, "401000");
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -371,6 +377,7 @@ public class TransferHelper {
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
             isoMsg.set(52, this.pinNumber);
+            isoMsg.set(54, Client.getServer() + ":" + Client.getPort());
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, isoMessage.getString(102));//rek tujuan

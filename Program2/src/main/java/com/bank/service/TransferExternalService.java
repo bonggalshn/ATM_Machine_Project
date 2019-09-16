@@ -30,9 +30,8 @@ public class TransferExternalService {
         try {
             externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
             isoMessage = isoUtil.stringToISO(externalResponse);
-            System.out.println(externalResponse);
+//            System.out.println("External response: "+externalResponse);
         }catch (Exception e){
-            System.out.println("error external inquiry:\n"+e.getMessage());
             return null;
         }
 
@@ -41,9 +40,6 @@ public class TransferExternalService {
         }
 
         int amount = Integer.parseInt(isoMessage.getString(4));
-        String beneficiaryNumber = isoMessage.getString(102);
-        String beneficiaryName = isoMessage.getString(103);
-        String bankCode = isoMessage.getString(127);
 
         boolean status = false;
         Customer issuer;
@@ -54,11 +50,12 @@ public class TransferExternalService {
             }
         }
 
-        String response = buildISOExternalInquiryResponse(accountNumber, amount, beneficiaryNumber, beneficiaryName, bankCode, status);
+        String response = buildISOExternalInquiryResponse(isoMessage, status);
+//        System.out.println("created response: "+response);
         return response;
     }
 
-    private String buildISOExternalInquiryResponse(String accountNumber, int amount, String beneficiaryNumber, String beneficiaryName, String bankCode, boolean status) {
+    private String buildISOExternalInquiryResponse(ISOMsg isoMessage, boolean status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -67,9 +64,9 @@ public class TransferExternalService {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0210");
 
-            isoMsg.set(2, accountNumber);
-            isoMsg.set(3, "390000");
-            isoMsg.set(4, amount + "");
+            isoMsg.set(2, isoMessage.getString(2));
+            isoMsg.set(3, "391000");
+            isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -90,12 +87,13 @@ public class TransferExternalService {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
-            isoMsg.set(102, beneficiaryNumber);//number
-            isoMsg.set(103, beneficiaryName);//name
+            isoMsg.set(102, isoMessage.getString(102));//number
+            isoMsg.set(103, isoMessage.getString(103));//name
             isoMsg.set(125, "0");
-            isoMsg.set(127, bankCode);
+            isoMsg.set(127, isoMessage.getString(127));
 
             byte[] result = isoMsg.pack();
             return new String(result);
@@ -109,8 +107,8 @@ public class TransferExternalService {
         String externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transfer");
         ISOMsg isoResponse = isoUtil.stringToISO(externalResponse);
 
-        System.out.println("Sout From external");
-        isoUtil.printISOMessage(isoResponse);
+//        System.out.println("Sout From external");
+//        isoUtil.printISOMessage(isoResponse);
 
         if (!isoResponse.getString(39).equals("00")) {
             return externalResponse;
@@ -118,13 +116,13 @@ public class TransferExternalService {
 
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
-        isoUtil.printISOMessage(isoMessage);
+//        isoUtil.printISOMessage(isoMessage);
 
         boolean status = false;
         try {
             Customer issuer = accountService.findByAccountNumber(isoMessage.getString(2));
             issuer.setBalance(issuer.getBalance() - Integer.parseInt(isoMessage.getString(4)));
-            System.out.println(issuer);
+//            System.out.println(issuer);
             accountService.update(issuer);
             status = true;
         } catch (Exception e) {
@@ -133,6 +131,7 @@ public class TransferExternalService {
         }
 
         String response = buildISOTransferResponse(isoMessage, status);
+//        System.out.println("0012323: "+response);
         return response;
     }
 
@@ -146,7 +145,7 @@ public class TransferExternalService {
             isoMsg.setMTI("0210");
 
             isoMsg.set(2, isoMessage.getString(2));
-            isoMsg.set(3, "400000");
+            isoMsg.set(3, "401000");
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
@@ -168,6 +167,7 @@ public class TransferExternalService {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(100, "001");
             isoMsg.set(102, isoMessage.getString(102));

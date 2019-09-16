@@ -43,6 +43,14 @@ public class Server {
             case "400000":
                 response = transferController.transferInternal(message);
                 break;
+            case "391000":
+                response = transferController.transferExternalInquiry(message);
+                break;
+            case "401000":
+//                System.out.println("Transfer external");
+                response = transferController.transferExternal(message);
+                System.out.println("akan dikirim ke atm: "+response);
+                break;
         }
         sendISOViaSocket(response);
     }
