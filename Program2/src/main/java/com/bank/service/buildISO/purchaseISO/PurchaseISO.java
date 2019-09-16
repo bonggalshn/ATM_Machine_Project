@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PurchaseISO {
-    public String phoneCreditInquiryISOResponse(Customer customer, Customer beneficiary, int amount, boolean status) {
+    public String phoneCreditInquiryISOResponse(ISOMsg isoMessage, Customer customer, Customer beneficiary, boolean status) {
         if (beneficiary.getAccountName().length() > 20)
             beneficiary.setAccountName(beneficiary.getAccountName().substring(0, 20));
         try {
@@ -22,7 +22,7 @@ public class PurchaseISO {
 
             isoMsg.set(2, customer.getAccountNumber());
             isoMsg.set(3, "381000");
-            isoMsg.set(4, "" + amount);
+            isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));
             isoMsg.set(11, "000001");
             isoMsg.set(12, new SimpleDateFormat("HHmmss").format(new Date()));
@@ -41,6 +41,7 @@ public class PurchaseISO {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, beneficiary.getAccountNumber());
             isoMsg.set(63, "0");
             isoMsg.set(102, beneficiary.getAccountName());
@@ -87,6 +88,7 @@ public class PurchaseISO {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, isoMessage.getString(62));
             isoMsg.set(63, "0");
             isoMsg.set(102, isoMessage.getString(102));

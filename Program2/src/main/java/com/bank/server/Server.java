@@ -18,6 +18,8 @@ public class Server {
     private WithdrawalController withdrawalController;
     @Autowired
     private TransferController transferController;
+    @Autowired
+    private PurchaseController purchaseController;
 
 
     @RabbitListener(queues = "mainQueue")
@@ -49,7 +51,12 @@ public class Server {
             case "401000":
 //                System.out.println("Transfer external");
                 response = transferController.transferExternal(message);
-                System.out.println("akan dikirim ke atm: "+response);
+                break;
+            case "381000":
+                response = purchaseController.phoneCreditInquiry(message);
+                break;
+            case "181000":
+                response = purchaseController.phoneCreditPorcess(message);
                 break;
         }
         sendISOViaSocket(response);

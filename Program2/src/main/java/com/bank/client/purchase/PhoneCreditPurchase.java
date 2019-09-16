@@ -1,6 +1,9 @@
 package com.bank.client.purchase;
 
+import com.bank.Util.CommonUtil;
 import com.bank.Util.ISOUtil;
+import com.bank.Util.MQUtil;
+import com.bank.client.Client;
 import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Purchase;
 import org.jpos.iso.ISOMsg;
@@ -31,14 +34,23 @@ public class PhoneCreditPurchase implements Purchase {
         this.pinNumber = pinNumber;
 
         String message = buildInquiryISO();
-        String response = ClientHelper.sendData(message, "http://localhost:8080/purchase/phoneCredit/inquiry");
+//        String response = ClientHelper.sendData(message, "http://localhost:8080/purchase/phoneCredit/inquiry");
+
+        MQUtil mqUtil = new MQUtil();
+        mqUtil.sendToExchange("mainExchange", message);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
         return response;
     }
 
     @Override
     public String purchase(String message) {
         message = buildISO(message);
-        String response = ClientHelper.sendData(message, "http://localhost:8080/purchase/phoneCredit/process");
+//        String response = ClientHelper.sendData(message, "http://localhost:8080/purchase/phoneCredit/process");
+
+        MQUtil mqUtil = new MQUtil();
+        mqUtil.sendToExchange("mainExchange",message);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
         return response;
     }
 
@@ -68,6 +80,7 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
+            isoMsg.set(54, Client.getServer()+":"+Client.getPort());
             isoMsg.set(52, pinNumber);
             isoMsg.set(62, "0");
             isoMsg.set(102, "1234567890");
@@ -81,7 +94,6 @@ public class PhoneCreditPurchase implements Purchase {
     }
     private String buildISO(String message){
         ISOMsg isoMessage = isoUtil.stringToISO(message);
-        isoUtil.printISOMessage(isoMessage);
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -107,7 +119,7 @@ public class PhoneCreditPurchase implements Purchase {
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "360");
-            isoMsg.set(54, "0");
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, isoMessage.getString(62));
             isoMsg.set(63, "0");
             isoMsg.set(102, isoMessage.getString(102));

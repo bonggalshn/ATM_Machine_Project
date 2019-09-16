@@ -21,6 +21,7 @@ public class PurchaseService {
 
     public String purchaseInquiry(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
+
         String productCode = isoMessage.getString(32);
         String accountNumber = isoMessage.getString(2);
         String pinNumber = isoMessage.getString(52);
@@ -41,7 +42,7 @@ public class PurchaseService {
             status = false;
         }
 
-        String response = purchaseISO.phoneCreditInquiryISOResponse(customer, beneficiary, amount, status);
+        String response = purchaseISO.phoneCreditInquiryISOResponse(isoMessage, customer, beneficiary, status);
         return response;
 
     }

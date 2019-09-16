@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87f688dc-da0b-4586-97bf-def9fe4e73fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Program3/logs/app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/archived/app.2019-09-15.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Program2/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/BalanceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/BalanceHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/TransferHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/controller/BalanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/controller/BalanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/purchase/PhoneCreditPurchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/client/purchase/PhoneCreditPurchase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/TransferExternalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/TransferHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/TransferHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/controller/BalanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/controller/BalanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/PurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/PurchaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/buildISO/purchaseISO/PurchaseISO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/src/main/java/com/bank/service/buildISO/purchaseISO/PurchaseISO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/purchase/PhoneCreditPurchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/client/purchase/PhoneCreditPurchase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/TransferExternalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/PurchaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/PurchaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/buildISO/purchaseISO/PurchaseISO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program2/target/classes/com/bank/service/buildISO/purchaseISO/PurchaseISO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Program3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Program3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program3/src/main/java/com/bank/service/ISOBuilder/transfer/ExternalTransferISOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Program3/src/main/java/com/bank/service/ISOBuilder/transfer/ExternalTransferISOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Program3/target/classes/com/bank/service/ISOBuilder/transfer/ExternalTransferISOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Program3/target/classes/com/bank/service/ISOBuilder/transfer/ExternalTransferISOBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/switching/controller/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/switching/controller/TransferController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +90,7 @@
       <workItem from="1568448801484" duration="7285000" />
       <workItem from="1568459767985" duration="1220000" />
       <workItem from="1568525282552" duration="4995000" />
-      <workItem from="1568632553408" duration="983000" />
+      <workItem from="1568632553408" duration="1191000" />
     </task>
     <servers />
   </component>
