@@ -9,8 +9,12 @@ import java.util.Date;
 
 public class PaymentISO {
     public String internetPaymentInquiryResponse(ISOMsg isoMessage, String internetCompanyName, boolean status) {
-        if (internetCompanyName.length() > 20)
-            internetCompanyName = internetCompanyName.substring(0, 20);
+        try {
+            if (internetCompanyName.length() > 20)
+                internetCompanyName = internetCompanyName.substring(0, 20);
+        }catch (Exception e){
+            //log error
+        }
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -34,7 +38,7 @@ public class PaymentISO {
             if (status)
                 isoMsg.set(39, "00");
             else
-                isoMsg.set(39, "51");
+                isoMsg.set(39, "05");
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");

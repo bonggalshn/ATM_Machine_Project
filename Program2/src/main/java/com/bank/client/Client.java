@@ -31,6 +31,6 @@ public class Client {
                 System.out.println("Masukan salah.");
                 System.out.println("Main client: "+e.getMessage());
             }
-        } while (entry != 6);
+        } while (true);
     }
 }

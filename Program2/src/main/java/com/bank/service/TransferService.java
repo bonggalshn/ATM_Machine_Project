@@ -62,7 +62,11 @@ public class TransferService {
             isoMsg.setPackager(packager);
             isoMsg.setMTI("0210");
 
-            isoMsg.set(2, customer.getAccountNumber());
+            if (customer == null)
+                isoMsg.set(2, "0");
+            else
+                isoMsg.set(2, customer.getAccountNumber());
+
             isoMsg.set(3, "390000");
             isoMsg.set(4, isoMessage.getString(4));
             isoMsg.set(7, new SimpleDateFormat("MMddHHmmss").format(new Date()));

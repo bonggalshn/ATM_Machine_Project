@@ -35,6 +35,9 @@ public class PaymentHelper {
             case 1:
                 internetPaymentCase();
                 break;
+            case 2:
+                System.out.println("Transaksi dibatalkan");
+                break;
             default:
                 System.out.println("Masukan salah.");
                 break;

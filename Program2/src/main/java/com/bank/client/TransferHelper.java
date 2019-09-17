@@ -22,19 +22,15 @@ public class TransferHelper {
         this.pinNumber = pinNumber;
 
         int entry = 0;
-        do {
-            try {
-                transferMenu();
+        try {
+            transferMenu();
 
-                System.out.print("Entry: ");
-                entry = Integer.parseInt(ClientHelper.read());
-                transferCase(entry);
-                if (entry == 3)
-                    break;
-            } catch (Exception e) {
-                System.out.println("Transfer entry error:\n" + e.getMessage());
-            }
-        } while (true);
+            System.out.print("Entry: ");
+            entry = Integer.parseInt(ClientHelper.read());
+            transferCase(entry);
+        } catch (Exception e) {
+            System.out.println("Terjadi kesalahan. \nTransaksi tidak dapat dilakukan");
+        }
     }
 
     private void transferMenu() {

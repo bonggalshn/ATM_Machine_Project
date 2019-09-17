@@ -17,23 +17,18 @@ public class PurchaseHelper {
 
     public void purchaseMain() {
         int entry = 0;
-        here:
-        do {
-            System.out.println("\n\n------------------------");
-            System.out.println("Pembelian");
-            System.out.println("1. Pulsa");
-            System.out.println("2. Batal");
-            System.out.println("---------------------------");
-            try {
-                System.out.print("Entry: ");
-                entry = Integer.parseInt(ClientHelper.read());
-                purchaseCase(entry);
-                if (entry == 2)
-                    break here;
-            } catch (Exception e) {
-                System.out.println("purchange menu entry error\n" + e.getMessage());
-            }
-        } while (true);
+        System.out.println("\n\n------------------------");
+        System.out.println("Pembelian");
+        System.out.println("1. Pulsa");
+        System.out.println("2. Batal");
+        System.out.println("---------------------------");
+        try {
+            System.out.print("Entry: ");
+            entry = Integer.parseInt(ClientHelper.read());
+            purchaseCase(entry);
+        } catch (Exception e) {
+            System.out.println("purchange menu entry error\n" + e.getMessage());
+        }
     }
 
     private void purchaseCase(int entry) {

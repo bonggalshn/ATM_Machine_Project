@@ -1,6 +1,8 @@
 package com.bank.client.payment;
 
+import com.bank.Util.CommonUtil;
 import com.bank.Util.ISOUtil;
+import com.bank.Util.MQUtil;
 import com.bank.client.Client;
 import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Payment;
@@ -48,7 +50,10 @@ public class InternetPayment implements Payment {
         // The bill was receive from the third party
 
         String message = buildISOInquiry(accountNumber,pinNumber,bill);
-        String response = ClientHelper.sendData(message, "http://localhost:8080/payment/internet/inquiry");
+//        String response = ClientHelper.sendData(message, "http://localhost:8080/payment/internet/inquiry");
+        new MQUtil().sendToExchange("mainExchange", message);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
         return response;
     }
 
@@ -97,7 +102,10 @@ public class InternetPayment implements Payment {
 
         String sendMessage = buildISOPayment(isoMessage.getString(2),Integer.parseInt(isoMessage.getString(4)));
 
-        String response = ClientHelper.sendData(sendMessage, "http://localhost:8080/payment/internet");
+//        String response = ClientHelper.sendData(sendMessage, "http://localhost:8080/payment/internet");
+        new MQUtil().sendToExchange("mainExchange", sendMessage);
+        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
         return response;
     }
 

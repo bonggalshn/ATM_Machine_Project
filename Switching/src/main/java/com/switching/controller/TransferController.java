@@ -24,10 +24,7 @@ public class TransferController {
 
     @PostMapping(value = "/transferInquiry/transfer")
     public String transferInquiry(@RequestBody String message){
-        System.out.println("Process the inquiry");
-        String response = transferService.processTransferInquiry(message);
-        System.out.println(response);
-        return response;
+        return transferService.processTransferInquiry(message);
     }
 
     @PostMapping(value = "/transfer")
@@ -35,10 +32,5 @@ public class TransferController {
         ISOMsg isoMsg = isoUtil.stringToISO(message);
         logger.info("Transfer to {} by Account '{}'",isoMsg.getString(127),isoMsg.getString(2));
         return transferService.processTransfer(message);
-    }
-
-    @PostMapping(value = "/test")
-    public String test(@RequestBody String message){
-        return message;
     }
 }

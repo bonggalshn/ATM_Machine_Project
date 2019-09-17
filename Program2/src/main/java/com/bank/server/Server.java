@@ -26,10 +26,14 @@ public class Server {
 
     @RabbitListener(queues = "mainQueue")
     public void getResponse(byte[] message) {
-        String response = new String(message);
-        ISOMsg isoMessage = isoUtil.stringToISO(response);
-        String processingCode = isoMessage.getString(3);
-        controllerMapping(processingCode, response);
+        try {
+            String response = new String(message);
+            ISOMsg isoMessage = isoUtil.stringToISO(response);
+            String processingCode = isoMessage.getString(3);
+            controllerMapping(processingCode, response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void controllerMapping(String processingCode, String message) {

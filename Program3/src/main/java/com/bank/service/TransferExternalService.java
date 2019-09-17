@@ -35,12 +35,10 @@ public class TransferExternalService {
         if (beneficiary != null)
             status = true;
 
-        String response = ISOBuilder.ExternalInquiryISOresponse(isoMessage, beneficiary, status, amount);
-
-        return response;
+        return ISOBuilder.ExternalInquiryISOresponse(isoMessage, beneficiary, status, amount);
     }
 
-    public String receiveExternalTransfer(String message){
+    public String receiveExternalTransfer(String message) {
 
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
@@ -50,17 +48,15 @@ public class TransferExternalService {
         boolean status = false;
         try {
             Customer beneficiary = accountService.findByAccountNumber(beneficiaryNumber);
-            beneficiary.setBalance(beneficiary.getBalance()+amount);
+            beneficiary.setBalance(beneficiary.getBalance() + amount);
             accountService.update(beneficiary);
             status = true;
-        }catch (Exception e){
-            logger.error("Method: receiveExternalTransfer, Error: {}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("Method: receiveExternalTransfer, Error: {}", e.getMessage());
             status = false;
         }
 
-        String response= ISOBuilder.ExternalTransferISOresponse(isoMessage,status);
-
-        isoUtil.printISOMessage(isoUtil.stringToISO(response));
+        String response = ISOBuilder.ExternalTransferISOresponse(isoMessage, status);
 
         return response;
     }

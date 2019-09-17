@@ -9,3 +9,10 @@
 2019-09-17 11:00:40,003 INFO com.bank.controller.TransferController [http-nio-8081-exec-7] Receive transfer inquiry from account '2', amount: '6501'
 2019-09-17 11:01:11,362 INFO com.bank.controller.TransferController [http-nio-8081-exec-9] Receive transfer inquiry from account '2', amount: '6501'
 2019-09-17 11:05:47,736 INFO com.bank.controller.TransferController [http-nio-8081-exec-10] Receive transfer inquiry from account '98765', amount: '6512'
+2019-09-17 13:07:35,957 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 37822 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program3)
+2019-09-17 13:07:35,959 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 13:07:35,959 INFO com.bank.AtmApplication [main] No active profile set, falling back to default profiles: default
+2019-09-17 13:07:39,391 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.78 seconds (JVM running for 9.745)
+2019-09-17 13:19:46,502 INFO com.bank.controller.TransferController [http-nio-8081-exec-1] Receive transfer inquiry from account '1', amount: '7500'
+2019-09-17 13:20:26,499 INFO com.bank.controller.TransferController [http-nio-8081-exec-3] Receive transfer inquiry from account '12345', amount: '6600'
+2019-09-17 13:20:30,823 INFO com.bank.controller.TransferController [http-nio-8081-exec-5] Receive transfer from account '12345', amount: '6600'

@@ -22,7 +22,7 @@ public class BankMappingService {
                     charge = 6500;
                     break;
                 default:
-                    charge = 6500;
+                    charge = 0;
                     break;
             }
 

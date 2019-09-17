@@ -32,7 +32,7 @@ public class PaymentService {
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             company = accountService.findByAccountNumber(internetCompanyNumber);
             customer = accountService.findByAccountNumber(accountNumber);
-            if(customer.getBalance()>amount){
+            if (customer.getBalance() > amount) {
                 status = true;
             }
         }
@@ -60,16 +60,16 @@ public class PaymentService {
 
                 accountService.update(customer);
                 accountService.update(company);
-                status=true;
+                status = true;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             status = false;
         }
 
 
-        String response = paymentISO.internetPaymentResponse(isoMessage, company.getAccountName(),status);
-        System.out.println("Payment service: " + response);
+        String response = paymentISO.internetPaymentResponse(isoMessage, company.getAccountName(), status);
+//        System.out.println("Payment service: " + response);
         return response;
     }
 }

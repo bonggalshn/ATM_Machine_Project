@@ -28,12 +28,7 @@ public class TransferService {
             if(!url.equals("404")){
                 message = bankMappingService.setCharge(bankCode, isoMessage);
 
-                System.out.println("Send to beneficiary bank");
-                String response = CommonUtil.sendData(message, url);
-                System.out.println("response receive");
-
-                isoUtil.printISOMessage(isoUtil.stringToISO(response));
-                return response;
+                return CommonUtil.sendData(message, url);
             }else {
                 isoMessage.set(39,"05");
                 byte[] result = isoMessage.pack();
@@ -47,15 +42,10 @@ public class TransferService {
     public String processTransfer(String message){
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
-        System.out.println("Transfer order");
-        isoUtil.printISOMessage(isoMessage);
-
         String bankCode = isoMessage.getString(127);
         String url = bankMappingService.getUrlTransfer(bankCode);
 
         String response = CommonUtil.sendData(message, url);
-        System.out.println("Transfer response");
-        isoUtil.printISOMessage(isoUtil.stringToISO(response));
         return response;
     }
 }
