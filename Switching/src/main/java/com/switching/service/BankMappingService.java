@@ -69,4 +69,5 @@ public class BankMappingService {
             return "BMS.getUrl: "+e.getMessage();
         }
     }
+
 }

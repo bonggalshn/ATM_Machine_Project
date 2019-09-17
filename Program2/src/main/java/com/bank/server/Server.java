@@ -25,16 +25,16 @@ public class Server {
 
 
     @RabbitListener(queues = "mainQueue")
-    public void getResponse(byte[] message){
+    public void getResponse(byte[] message) {
         String response = new String(message);
         ISOMsg isoMessage = isoUtil.stringToISO(response);
         String processingCode = isoMessage.getString(3);
-        controllerMapping(processingCode,response);
+        controllerMapping(processingCode, response);
     }
 
-    private void controllerMapping(String processingCode, String message){
+    private void controllerMapping(String processingCode, String message) {
         String response = "";
-        switch (processingCode){
+        switch (processingCode) {
             case "300000":
                 response = balanceController.BalanceInfo(message);
                 break;
@@ -70,7 +70,7 @@ public class Server {
         sendISOViaSocket(response);
     }
 
-    private void sendISOViaSocket(String message){
+    private void sendISOViaSocket(String message) {
         try {
             ISOMsg isoMessage = isoUtil.stringToISO(message);
             String address[] = isoMessage.getString(54).split(":");
@@ -82,7 +82,7 @@ public class Server {
             dout.flush();
             dout.close();
             socket.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
     }

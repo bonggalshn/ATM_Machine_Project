@@ -44,4 +44,13 @@ public class ISOUtil {
             return isoMsg;
         }
     }
+
+    public boolean checkISO(String message){
+        try{
+            stringToISO(message);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

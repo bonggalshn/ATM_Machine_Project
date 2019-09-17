@@ -26,14 +26,12 @@ public class TransferExternalService {
         String accountNumber = isoMessage.getString(2);
         String pinNumber = isoMessage.getString(52);
 
-        String externalResponse = null;
-        try {
-            externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
-            isoMessage = isoUtil.stringToISO(externalResponse);
-//            System.out.println("External response: "+externalResponse);
-        }catch (Exception e){
-            return null;
+        String externalResponse = "";
+        externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
+        if(externalResponse.equals("05")){
+            return "05";
         }
+        isoMessage = isoUtil.stringToISO(externalResponse);
 
         if (!isoMessage.getString(39).equals("00")) {
             return externalResponse;

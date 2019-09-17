@@ -1,0 +1,10 @@
+2019-09-16 18:16:07,570 INFO com.switching.SwitchingApplication [main] Starting SwitchingApplication on Bonggals-MacBook-Pro.local with PID 52015 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Switching/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Switching)
+2019-09-16 18:16:07,576 DEBUG com.switching.SwitchingApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-16 18:16:07,577 INFO com.switching.SwitchingApplication [main] No active profile set, falling back to default profiles: default
+2019-09-16 18:16:10,049 INFO com.switching.SwitchingApplication [main] Started SwitchingApplication in 2.849 seconds (JVM running for 8.737)
+2019-09-16 18:25:35,866 INFO com.switching.controller.TransferController [http-nio-8082-exec-7] Transfer to 002 by Account '1'
+2019-09-16 18:28:13,971 INFO com.switching.controller.TransferController [http-nio-8082-exec-5] Transfer to 002 by Account '1'
+2019-09-16 18:31:34,891 INFO com.switching.controller.TransferController [http-nio-8082-exec-9] Transfer to 002 by Account '1'
+2019-09-16 18:33:04,615 INFO com.switching.controller.TransferController [http-nio-8082-exec-3] Transfer to 002 by Account '1'
+2019-09-16 18:34:35,270 INFO com.switching.controller.TransferController [http-nio-8082-exec-7] Transfer to 002 by Account '1'
+2019-09-16 18:35:06,330 INFO com.switching.controller.TransferController [http-nio-8082-exec-1] Transfer to 002 by Account '1'

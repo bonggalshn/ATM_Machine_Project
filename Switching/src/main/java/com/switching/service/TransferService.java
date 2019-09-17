@@ -18,18 +18,30 @@ public class TransferService {
 
     public String processTransferInquiry(String message) {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
+        try {
 
-        String bankCode = isoMessage.getString(127);
+            String bankCode = isoMessage.getString(127);
 
-        String url = bankMappingService.getUrlInquiry(bankCode);
-        message = bankMappingService.setCharge(bankCode, isoMessage);
 
-        System.out.println("Send to beneficiary bank");
-        String response = CommonUtil.sendData(message,url);
-        System.out.println("response receive");
+            String url = bankMappingService.getUrlInquiry(bankCode);
 
-        isoUtil.printISOMessage(isoUtil.stringToISO(response));
-        return response;
+            if(!url.equals("404")){
+                message = bankMappingService.setCharge(bankCode, isoMessage);
+
+                System.out.println("Send to beneficiary bank");
+                String response = CommonUtil.sendData(message, url);
+                System.out.println("response receive");
+
+                isoUtil.printISOMessage(isoUtil.stringToISO(response));
+                return response;
+            }else {
+                isoMessage.set(39,"05");
+                byte[] result = isoMessage.pack();
+                return new String(result);
+            }
+        }catch (Exception e){
+            return "05";
+        }
     }
 
     public String processTransfer(String message){
@@ -45,6 +57,5 @@ public class TransferService {
         System.out.println("Transfer response");
         isoUtil.printISOMessage(isoUtil.stringToISO(response));
         return response;
-
     }
 }

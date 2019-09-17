@@ -54,11 +54,15 @@ public class TransferHelper {
                     System.out.println("Transaksi tidak dapat dilakukan");
                     break;
                 }
-                transferProcess(message);
+                if (isoUtil.checkISO(message)) {
+                    transferProcess(message);
+                } else {
+                    System.out.println("Transaksi tidak dapat dilakukan.");
+                }
                 break;
             case 2:
                 message = transferExternalInquiry();
-                if (message.equals(null)) {
+                if (message.equals(null) || message.equals("05")) {
                     System.out.println("Transaksi tidak dapat dilakukan.");
                     break;
                 }
@@ -246,9 +250,12 @@ public class TransferHelper {
         String message = buildISOInquiryExternal(tujuan, jumlah, bankCode);
 
 //        String response = ClientHelper.sendData(message, "http://localhost:8080/transfer/externalInquiry");
+
+        String response = "";
         MQUtil mqUtil = new MQUtil();
         mqUtil.sendToExchange("mainExchange", message);
-        String response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+        response = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
+
         return response;
     }
 
@@ -288,7 +295,6 @@ public class TransferHelper {
 
             byte[] result = isoMsg.pack();
 
-            System.out.println("External iso inquiry: " + new String(result));
             return new String(result);
         } catch (Exception e) {
             System.out.println("build iso external inquiry: " + e.getMessage());

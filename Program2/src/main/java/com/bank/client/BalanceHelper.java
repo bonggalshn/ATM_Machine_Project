@@ -17,13 +17,10 @@ public class BalanceHelper {
     public void inquiry(String accountNumber, String pinNumber){
         String isoMessage = buildISO(accountNumber, pinNumber);
 
-
 //        String result = ClientHelper.sendData(isoMessage, "http://localhost:8080/balance/info");
-
 
         // Send to message broker queue --------------------------------------------------------------------------------
         mqUtil.sendToExchange("mainExchange",isoMessage);
-        System.out.println(Client.getPort());
         String result = CommonUtil.receiveFromSocket(Integer.parseInt(Client.getPort()));
 
         ISOMsg isoResult = isoUtil.stringToISO(result);
