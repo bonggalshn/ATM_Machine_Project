@@ -4,8 +4,11 @@ import com.bank.Util.ISOUtil;
 import com.bank.client.interfaceClient.Payment;
 import com.bank.client.payment.InternetPayment;
 import org.jpos.iso.ISOMsg;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PaymentHelper {
+    private static final Logger logger = LoggerFactory.getLogger(PaymentHelper.class);
     private String accountNumber, pinNumber;
     private ISOUtil isoUtil = new ISOUtil();
 
@@ -19,7 +22,7 @@ public class PaymentHelper {
             int entry = Integer.parseInt(ClientHelper.read());
             PaymentProcess(entry);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -98,7 +101,7 @@ public class PaymentHelper {
                 System.out.println("Transaksi dibatalkan");
 
         } catch (Exception e) {
-            System.out.println("Internet confirmation entry error:\n"+e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

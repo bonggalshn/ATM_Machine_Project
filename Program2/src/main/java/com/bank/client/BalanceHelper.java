@@ -5,12 +5,15 @@ import com.bank.Util.ISOUtil;
 import com.bank.Util.MQUtil;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BalanceHelper {
+    private static final Logger logger = LoggerFactory.getLogger(BalanceHelper.class);
     private ISOUtil isoUtil = new ISOUtil();
     private MQUtil mqUtil = new MQUtil();
 
@@ -64,7 +67,7 @@ public class BalanceHelper {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

@@ -6,10 +6,13 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class ClientHelper {
+    private static final Logger logger = LoggerFactory.getLogger(ClientHelper.class);
     private String accountNumber;
     private String pinNumber;
 
@@ -30,7 +33,7 @@ public class ClientHelper {
 
             return true;
         } catch (Exception e) {
-            System.out.println("Show main menu: " + e.getMessage());
+            logger.error(e.getMessage());
             return false;
         }
     }

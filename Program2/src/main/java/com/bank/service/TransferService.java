@@ -4,6 +4,8 @@ import com.bank.Util.ISOUtil;
 import com.bank.entity.Customer;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import java.util.Date;
 
 @Service
 public class TransferService {
+    private static final Logger logger = LoggerFactory.getLogger(TransferService.class);
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
 
@@ -50,6 +53,10 @@ public class TransferService {
         String response = buildISOInquiry(isoMessage, customer, beneficiaryAccount, status);
 
 //        System.out.println("ISO Message: " + isoMessage);
+        logger.info("Transfer inquiry created for Account: '{}' to Beneficiary: '{}'; Amount: '{}';",
+                isoMessage.getString(2),
+                isoMessage.getString(103),
+                isoMessage.getString(4));
         return response;
     }
 
@@ -107,7 +114,7 @@ public class TransferService {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return e.getMessage();
         }
     }
@@ -132,8 +139,15 @@ public class TransferService {
             accountService.update(beneficiary);
             status = true;
         } catch (Exception e) {
+            logger.error(e.getMessage());
             status = false;
         }
+
+
+        logger.info("Transfer perform for Account: '{}' to Beneficiary: '{}'; Amount: '{}';",
+                isoMessage.getString(2),
+                isoMessage.getString(103),
+                isoMessage.getString(4));
 
         return buildISOTransfer(isoMessage, beneficiary, status);
 
@@ -187,7 +201,7 @@ public class TransferService {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

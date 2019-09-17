@@ -3,10 +3,13 @@ package com.bank.Util;
 import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 
 public class ISOUtil {
+    private static final Logger logger = LoggerFactory.getLogger(ISOUtil.class);
     public void printISOMessage(ISOMsg isoMsg) {
         try {
             System.out.printf("MTI = %s%n", isoMsg.getMTI());
@@ -16,7 +19,7 @@ public class ISOUtil {
                 }
             }
         } catch (ISOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 
@@ -40,7 +43,7 @@ public class ISOUtil {
             return isoMsg;
 
         }catch (Exception e){
-            System.out.println("ISOUTIL Exception: \n"+e);
+            logger.error(e.getMessage());
             return isoMsg;
         }
     }
@@ -50,6 +53,7 @@ public class ISOUtil {
             stringToISO(message);
             return true;
         }catch (Exception e){
+            logger.error(e.getMessage());
             return false;
         }
     }

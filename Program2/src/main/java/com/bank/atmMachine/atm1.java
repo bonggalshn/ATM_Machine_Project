@@ -10,6 +10,5 @@ public class atm1 {
     public static void main(String[] args) {
         Client atm = new Client("localhost",8090);
         atm.main(new String[0]);
-
     }
 }

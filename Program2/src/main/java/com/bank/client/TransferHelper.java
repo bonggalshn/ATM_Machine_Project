@@ -30,6 +30,7 @@ public class TransferHelper {
             transferCase(entry);
         } catch (Exception e) {
             System.out.println("Terjadi kesalahan. \nTransaksi tidak dapat dilakukan");
+            logger.error(e.getMessage());
         }
     }
 
@@ -143,7 +144,7 @@ public class TransferHelper {
                         break here;
                 }
             } catch (Exception e) {
-                System.out.println("Masukan salah: " + e.getMessage());
+                logger.error(e.getMessage());
                 break here;
             }
         } while (true);
@@ -186,7 +187,7 @@ public class TransferHelper {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println("build iso internal inquiry: " + e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -229,7 +230,7 @@ public class TransferHelper {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -293,7 +294,7 @@ public class TransferHelper {
 
             return new String(result);
         } catch (Exception e) {
-            System.out.println("build iso external inquiry: " + e.getMessage());
+            logger.error(e.getMessage());
             return e.getMessage();
         }
     }
@@ -347,7 +348,7 @@ public class TransferHelper {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Masukan salah.");
+                logger.error(e.getMessage());
             }
         } while (true);
     }
@@ -390,7 +391,7 @@ public class TransferHelper {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

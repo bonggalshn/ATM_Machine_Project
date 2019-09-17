@@ -24102,3 +24102,124 @@
 2019-09-17 14:04:30,390 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
 2019-09-17 14:04:40,888 WARN com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login failed for account '12345';
 2019-09-17 14:04:54,834 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 14:07:42,938 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '98765';
+2019-09-17 14:16:26,842 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 52210 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 14:16:26,844 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 14:16:26,844 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 14:16:30,197 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.612 seconds (JVM running for 9.282)
+2019-09-17 14:16:30,287 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
+2019-09-17 14:18:51,580 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
+2019-09-17 14:18:59,913 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 14:27:12,753 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 14:44:36,018 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 57509 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 14:44:36,019 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 14:44:36,019 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 14:44:39,084 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.304 seconds (JVM running for 8.934)
+2019-09-17 15:00:49,306 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '98765';
+2019-09-17 15:02:30,444 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
+2019-09-17 15:02:46,568 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '98765';
+2019-09-17 15:18:13,640 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 15:18:24,049 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 66268 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 15:18:24,050 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 15:18:24,051 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 15:18:27,013 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.181 seconds (JVM running for 8.887)
+2019-09-17 15:18:30,280 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 15:18:30,330 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '12345', amount '50000'
+2019-09-17 15:18:46,560 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 15:19:29,799 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 16:17:28,407 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 16:17:36,400 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 78160 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:17:36,402 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:17:36,402 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:17:39,386 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.226 seconds (JVM running for 9.054)
+2019-09-17 16:17:50,366 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 16:17:50,373 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: 'Raditya Dika' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 16:17:55,158 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer performed for Account: '12345' to Beneficiary: '0' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 16:19:49,262 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 78596 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:19:49,263 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:19:49,263 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:19:52,205 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.176 seconds (JVM running for 8.882)
+2019-09-17 16:19:54,678 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 16:19:54,685 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM '0000000000012345'; Amount: '000000050000'; Account: '12345'
+2019-09-17 16:20:02,302 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 16:20:37,434 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:20:37,495 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM '0000000000023456'; Amount: '000000050000'; Account: '23456'
+2019-09-17 16:20:37,504 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '23456', amount '50000'
+2019-09-17 16:20:56,011 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:20:56,017 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM '0000000000023456'; Amount: '000000120001'; Account: '23456'
+2019-09-17 16:22:31,788 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 79113 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:22:31,790 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:22:31,790 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:22:34,856 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.294 seconds (JVM running for 8.941)
+2019-09-17 16:23:01,768 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:23:01,802 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000050000'; Account: '23456'
+2019-09-17 16:23:01,812 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '23456', amount '50000'
+2019-09-17 16:25:40,992 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 79721 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:25:40,993 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:25:40,993 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:25:44,173 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.438 seconds (JVM running for 9.121)
+2019-09-17 16:26:00,128 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:26:00,166 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000050000'; Account: '23456'
+2019-09-17 16:26:00,173 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '23456', amount '50000'
+2019-09-17 16:29:54,684 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 80564 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:29:54,686 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:29:54,686 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:29:57,616 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.165 seconds (JVM running for 8.9)
+2019-09-17 16:30:10,837 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:30:10,868 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000150000'; Account: '23456'
+2019-09-17 16:30:10,877 INFO com.bank.client.WithdrawalHelper [main] Cash withdrawal, Account '23456', amount '150000'
+2019-09-17 16:30:56,079 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 16:31:05,175 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 80798 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 16:31:05,178 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 16:31:05,178 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 16:31:08,249 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.317 seconds (JVM running for 9.006)
+2019-09-17 16:36:47,612 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:36:47,619 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '23456' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 16:36:49,063 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer performed for Account: '23456' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 16:41:52,614 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:42:17,137 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:42:18,980 INFO com.bank.service.PurchaseService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Purchasing performed for Account: '23456' to 'PT Telkom Indonesia '; Amount: '000000050000';
+2019-09-17 16:42:32,275 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 16:42:34,187 INFO com.bank.service.PaymentService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Payment perfomed for Account: '23456' to '1234567890' (Amount: '000000100000');
+2019-09-17 17:21:27,721 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 17:21:33,132 INFO com.bank.client.Client [main] ATM localhost:8091 used.
+2019-09-17 17:22:53,808 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 17:23:53,861 INFO com.bank.client.Client [main] ATM localhost:8091 used.
+2019-09-17 17:24:05,380 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 17:26:06,437 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 91358 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 17:26:06,439 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 17:26:06,439 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 17:26:09,538 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.417 seconds (JVM running for 9.285)
+2019-09-17 17:26:09,649 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 17:26:09,674 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 17:26:46,337 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 17:27:14,095 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '23456';
+2019-09-17 17:27:14,103 INFO com.bank.service.TransferService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '23456' to Beneficiary: '0'; Amount: '000000010000';
+2019-09-17 17:27:23,603 INFO com.bank.service.TransferService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer perform for Account: '23456' to Beneficiary: '0'; Amount: '000000010000';
+2019-09-17 17:27:23,613 INFO com.bank.client.TransferHelper [main] Account '23456' perform '10000' CASH WITHDARWAL
+2019-09-17 17:27:35,595 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 17:31:08,149 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 17:31:11,748 INFO com.bank.client.Client [main] ATM localhost:8091 used.
+2019-09-17 17:31:40,954 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 92416 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 17:31:40,955 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 17:31:40,955 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 17:31:44,327 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.6 seconds (JVM running for 9.252)
+2019-09-17 17:37:21,656 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
+2019-09-17 18:50:44,029 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 20:05:12,176 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 20041 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 20:05:12,178 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 20:05:12,178 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 20:05:15,199 INFO com.bank.AtmApplication [main] Started AtmApplication in 3.269 seconds (JVM running for 8.934)
+2019-09-17 20:05:15,294 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '2345' is not found;
+2019-09-17 20:05:15,331 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 20:05:56,730 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Account '1' is not found;
+2019-09-17 20:05:56,733 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8091'; Amount: '000000050000'; Account: '1'
+2019-09-17 20:06:25,716 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 20:06:25,725 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8091'; Amount: '000000050000'; Account: '12345'
+2019-09-17 20:08:17,310 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 20:08:17,314 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 20:08:20,970 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer performed for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 20:08:28,347 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 20:08:45,401 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 20:08:45,407 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
+2019-09-17 22:33:22,864 INFO com.bank.client.Client [main] ATM localhost:8090 used.

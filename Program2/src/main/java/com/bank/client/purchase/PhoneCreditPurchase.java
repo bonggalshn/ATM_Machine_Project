@@ -8,12 +8,15 @@ import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Purchase;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PhoneCreditPurchase implements Purchase {
+    private static final Logger logger = LoggerFactory.getLogger(PhoneCreditPurchase.class);
     private String phoneNumber;
     private String name;
     private int amount;
@@ -88,7 +91,7 @@ public class PhoneCreditPurchase implements Purchase {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -127,7 +130,7 @@ public class PhoneCreditPurchase implements Purchase {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

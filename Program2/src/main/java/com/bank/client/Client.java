@@ -1,6 +1,10 @@
 package com.bank.client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Client {
+    private static final Logger logger = LoggerFactory.getLogger(Client.class);
     private static ClientHelper helper = new ClientHelper();
     private static String server;
     private static int port;
@@ -19,6 +23,10 @@ public class Client {
     }
 
     public static void main(String[] args) {
+        logger.info("ATM {}:{} used.",
+                Client.getServer(),
+                Client.getPort());
+
         int entry = 0;
         do {
             if (!helper.showMainMenu())
@@ -28,8 +36,7 @@ public class Client {
                 entry = Integer.parseInt(ClientHelper.read());
                 helper.processMenu(entry);
             } catch (Exception e) {
-                System.out.println("Masukan salah.");
-                System.out.println("Main client: "+e.getMessage());
+                logger.error(e.getMessage());
             }
         } while (true);
     }

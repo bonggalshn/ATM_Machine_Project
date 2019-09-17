@@ -3,6 +3,8 @@ package com.bank.server;
 import com.bank.Util.ISOUtil;
 import com.bank.controller.*;
 import org.jpos.iso.ISOMsg;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,6 +12,8 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 public class Server {
+    private static final Logger logger = LoggerFactory.getLogger(Server.class);
+
     private ISOUtil isoUtil = new ISOUtil();
 
     @Autowired
@@ -32,7 +36,7 @@ public class Server {
             String processingCode = isoMessage.getString(3);
             controllerMapping(processingCode, response);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 
@@ -87,7 +91,7 @@ public class Server {
             dout.close();
             socket.close();
         } catch (Exception e) {
-            e.getMessage();
+            logger.error(e.getMessage());
         }
     }
 

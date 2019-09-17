@@ -1,14 +1,18 @@
 package com.bank.service;
 
 import com.bank.Util.ISOUtil;
+import com.bank.client.interfaceClient.Payment;
 import com.bank.entity.Customer;
 import com.bank.service.buildISO.paymentISO.PaymentISO;
 import org.jpos.iso.ISOMsg;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PaymentService {
+    private static final Logger logger = LoggerFactory.getLogger(PaymentService.class);
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
     private PaymentISO paymentISO = new PaymentISO();
@@ -63,13 +67,17 @@ public class PaymentService {
                 status = true;
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             status = false;
         }
 
 
         String response = paymentISO.internetPaymentResponse(isoMessage, company.getAccountName(), status);
 //        System.out.println("Payment service: " + response);
+        logger.info("Payment perfomed for Account: '{}' to '{}' (Amount: '{}');",
+                isoMessage.getString(2),
+                isoMessage.getString(102),
+                isoMessage.getString(4));
         return response;
     }
 }

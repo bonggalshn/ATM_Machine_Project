@@ -77,7 +77,10 @@ public class WithdrawalHelper {
 
             ISOMsg isoMessange = isoUtil.stringToISO(response);
             if(isoMessange.getString(39).equals("00")){
-                logger.info("Cash withdrawal, Account '{}', amount '{}'",isoMessange.getString(2),Integer.parseInt(isoMessange.getString(4)));
+                logger.info("Cash withdrawal ({}), Account '{}', amount '{}'",
+                        isoMessange.getString(54),
+                        isoMessange.getString(2),
+                        Integer.parseInt(isoMessange.getString(4)));
                 System.out.println("Tarik tunai berhasil.");
             }else {
                 System.out.println("Transaksi tidak dapat dilakukan.");
@@ -121,7 +124,7 @@ public class WithdrawalHelper {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

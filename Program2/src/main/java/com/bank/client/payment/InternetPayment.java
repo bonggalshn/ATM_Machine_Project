@@ -8,12 +8,15 @@ import com.bank.client.ClientHelper;
 import com.bank.client.interfaceClient.Payment;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class InternetPayment implements Payment {
+    private static final Logger logger = LoggerFactory.getLogger(InternetPayment.class);
     private String areaCode;
     private String phoneNumber;
     private String internetNumber;
@@ -91,7 +94,7 @@ public class InternetPayment implements Payment {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -143,7 +146,7 @@ public class InternetPayment implements Payment {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

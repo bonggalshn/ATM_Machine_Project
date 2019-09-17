@@ -5,6 +5,8 @@ import com.bank.client.ClientHelper;
 import com.bank.entity.Customer;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
@@ -13,6 +15,7 @@ import java.util.Date;
 
 @Service
 public class TransferExternalService {
+    private static final Logger logger = LoggerFactory.getLogger(TransferExternalService.class);
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
 
@@ -49,6 +52,12 @@ public class TransferExternalService {
         }
 
         String response = buildISOExternalInquiryResponse(isoMessage, status);
+
+        logger.info("Transfer inquiry created for Account: '{}' to Beneficiary: '{}' (Bank code: '{}'); Amount: '{}';",
+                isoMessage.getString(2),
+                isoMessage.getString(102),
+                isoMessage.getString(127),
+                isoMessage.getString(4));
 //        System.out.println("created response: "+response);
         return response;
     }
@@ -96,7 +105,7 @@ public class TransferExternalService {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return e.getMessage();
         }
     }
@@ -124,11 +133,17 @@ public class TransferExternalService {
             accountService.update(issuer);
             status = true;
         } catch (Exception e) {
-            System.out.println("Update issuer balance: " + e.getMessage());
+            logger.error(e.getMessage());
             status = false;
         }
 
         String response = buildISOTransferResponse(isoMessage, status);
+
+        logger.info("Transfer performed for Account: '{}' to Beneficiary: '{}' (Bank code: '{}'); Amount: '{}';",
+                isoMessage.getString(2),
+                isoMessage.getString(102),
+                isoMessage.getString(127),
+                isoMessage.getString(4));
 //        System.out.println("0012323: "+response);
         return response;
     }
@@ -176,7 +191,7 @@ public class TransferExternalService {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

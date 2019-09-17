@@ -1,10 +1,13 @@
 package com.bank.service;
 
 import com.bank.Util.ISOUtil;
+import com.bank.controller.WithdrawalController;
 import com.bank.entity.Customer;
 import com.bank.repository.AccountRepository;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,7 @@ import java.util.Date;
 
 @Service
 public class WithdrawalService {
+    private static final Logger logger = LoggerFactory.getLogger(WithdrawalController.class);
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
 
@@ -42,11 +46,14 @@ public class WithdrawalService {
         }
 
         String response = buildISO(isoMessage, status);
-
+        logger.info("Cash withdraw from ATM '{}'; Amount: '{}'; Account: '{}'",
+                isoMessage.getString(54),
+                isoMessage.getString(4),
+                isoMessage.getString(2));
         return response;
     }
 
-    private String buildISO(ISOMsg isoMessage ,boolean status) {
+    private String buildISO(ISOMsg isoMessage, boolean status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -84,7 +91,7 @@ public class WithdrawalService {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
     }

@@ -5,11 +5,14 @@ import com.bank.client.interfaceClient.Purchase;
 import com.bank.entity.Customer;
 import com.bank.service.buildISO.purchaseISO.PurchaseISO;
 import org.jpos.iso.ISOMsg;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PurchaseService {
+    private static final Logger logger = LoggerFactory.getLogger(PurchaseService.class);
     private PurchaseISO purchaseISO = new PurchaseISO();
     private AccountService accountService;
     private ISOUtil isoUtil = new ISOUtil();
@@ -70,11 +73,16 @@ public class PurchaseService {
 
             status = true;
         }catch (Exception e){
+            logger.error(e.getMessage());
             status = false;
         }
 
         System.out.println("\n\nSTATUS: "+status);
         String response = purchaseISO.phoneCreditISOResponse(isoMessage, status);
+        logger.info("Purchasing performed for Account: '{}' to '{}'; Amount: '{}';",
+                isoMessage.getString(2),
+                isoMessage.getString(102),
+                isoMessage.getString(4));
         return response;
     }
 

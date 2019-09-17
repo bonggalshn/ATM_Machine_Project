@@ -1,14 +1,18 @@
 package com.bank.service.buildISO.purchaseISO;
 
+import com.bank.client.interfaceClient.Purchase;
 import com.bank.entity.Customer;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PurchaseISO {
+    private static final Logger logger = LoggerFactory.getLogger(PurchaseISO.class);
     public String phoneCreditInquiryISOResponse(ISOMsg isoMessage, Customer customer, Customer beneficiary, boolean status) {
         if (beneficiary.getAccountName().length() > 20)
             beneficiary.setAccountName(beneficiary.getAccountName().substring(0, 20));
@@ -49,7 +53,7 @@ public class PurchaseISO {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println("purchase iso inquiry: " + e);
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -96,7 +100,7 @@ public class PurchaseISO {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println("Phone purchase error: " + e);
+            logger.error(e.getMessage());
             return null;
         }
     }

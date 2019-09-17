@@ -30,7 +30,6 @@ public class TransferController {
     @PostMapping(value = "/transfer")
     public String transfer(@RequestBody String message){
         ISOMsg isoMsg = isoUtil.stringToISO(message);
-        logger.info("Transfer to {} by Account '{}'",isoMsg.getString(127),isoMsg.getString(2));
         return transferService.processTransfer(message);
     }
 }

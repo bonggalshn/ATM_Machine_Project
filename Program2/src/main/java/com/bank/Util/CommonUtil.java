@@ -1,10 +1,14 @@
 package com.bank.Util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.DataInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class CommonUtil {
+    private static final Logger logger = LoggerFactory.getLogger(CommonUtil.class);
     public static String receiveFromSocket(int port){
         try {
             ServerSocket serverSocket = new ServerSocket(port);
@@ -18,7 +22,7 @@ public class CommonUtil {
 
             return receive;
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
             return e.getMessage();
         }
     }

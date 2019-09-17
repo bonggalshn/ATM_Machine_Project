@@ -4,8 +4,12 @@ import com.bank.client.ClientHelper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MQUtil {
+    private static final Logger logger = LoggerFactory.getLogger(MQUtil.class);
+
     public void sendToExchange(String exchangeName, String message) {
         String json = "{\n" +
                 "\t\"properties\":{},\n" +
@@ -26,7 +30,7 @@ public class MQUtil {
             } else
                 System.out.println("Cannot send the message");
         } catch (Exception e) {
-            System.out.println("error: " + e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -45,6 +49,7 @@ public class MQUtil {
             json = encode(response);
             return ((JSONObject) json.get(0)).get("payload")+"";
         } catch (Exception e) {
+            logger.error(e.getMessage());
             return "";
         }
     }

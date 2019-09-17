@@ -2,18 +2,22 @@ package com.bank.service.buildISO.paymentISO;
 
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.packager.GenericPackager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PaymentISO {
+    private static final Logger logger = LoggerFactory.getLogger(PaymentISO.class);
+
     public String internetPaymentInquiryResponse(ISOMsg isoMessage, String internetCompanyName, boolean status) {
         try {
             if (internetCompanyName.length() > 20)
                 internetCompanyName = internetCompanyName.substring(0, 20);
         }catch (Exception e){
-            //log error
+            logger.error(e.getMessage());
         }
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
@@ -52,7 +56,7 @@ public class PaymentISO {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println("InternetPaymentInquiry: " + e);
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -97,7 +101,7 @@ public class PaymentISO {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
-            System.out.println("InternetPaymentInquiry: " + e);
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -118,6 +122,7 @@ public class PaymentISO {
             byte[] result = isoMsg.pack();
             return new String(result);
         } catch (Exception e) {
+            logger.error(e.getMessage());
             return null;
         }
     }

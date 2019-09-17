@@ -4,8 +4,11 @@ import ch.qos.logback.core.net.server.Client;
 import com.bank.Util.ISOUtil;
 import com.bank.client.purchase.PhoneCreditPurchase;
 import org.jpos.iso.ISOMsg;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PurchaseHelper {
+    private static final Logger logger = LoggerFactory.getLogger(PurchaseHelper.class);
     private String accountNumber;
     private String pinNumber;
     private ISOUtil isoUtil = new ISOUtil();
@@ -27,7 +30,7 @@ public class PurchaseHelper {
             entry = Integer.parseInt(ClientHelper.read());
             purchaseCase(entry);
         } catch (Exception e) {
-            System.out.println("purchange menu entry error\n" + e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -69,7 +72,7 @@ public class PurchaseHelper {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Phone credit case entry error: \n" + e.getMessage());
+                logger.error(e.getMessage());
             }
         } while (true);
     }
@@ -102,7 +105,7 @@ public class PurchaseHelper {
                 }
                 break here;
             } catch (Exception e) {
-                System.out.println("Telkomsel credit entry error:\n" + e.getMessage());
+                logger.error(e.getMessage());
             }
         } while (true);
     }
@@ -151,7 +154,7 @@ public class PurchaseHelper {
                     System.out.println("Masukan salah.");
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                logger.error(e.getMessage());
             }
         } while (true);
 

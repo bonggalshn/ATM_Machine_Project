@@ -35,6 +35,10 @@ public class TransferExternalService {
         if (beneficiary != null)
             status = true;
 
+        logger.info("Receive transfer inquiry from account '{}', amount: '{}'",
+                isoMessage.getString(2),
+                Integer.parseInt(isoMessage.getString(4)));
+
         return ISOBuilder.ExternalInquiryISOresponse(isoMessage, beneficiary, status, amount);
     }
 
@@ -58,6 +62,9 @@ public class TransferExternalService {
 
         String response = ISOBuilder.ExternalTransferISOresponse(isoMessage, status);
 
+        logger.info("Receive transfer from account '{}', amount: '{}'",
+                isoMessage.getString(2),
+                Integer.parseInt(isoMessage.getString(4)));
         return response;
     }
 }

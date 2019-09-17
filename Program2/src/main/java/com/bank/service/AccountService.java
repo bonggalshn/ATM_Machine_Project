@@ -28,17 +28,16 @@ public class AccountService {
     public boolean checkAccount(String accountNumber, String pinNumber) {
         Customer customer = findByAccountNumber(accountNumber);
         if (customer == null) {
-            logger.info("Account '{}' is not found;",accountNumber);
+            logger.info("Account '{}' is not found;", accountNumber);
             return false;
         }
 
-        if (Integer.parseInt(customer.getPinNumber()) == Integer.parseInt(pinNumber))
-            {
-                logger.info("Login success for account '{}';",accountNumber);
-                return true;}
-        else
-            {
-                logger.warn("Login failed for account '{}';",accountNumber);
-                return false;}
+        if (Integer.parseInt(customer.getPinNumber()) == Integer.parseInt(pinNumber)) {
+            logger.info("Login success for account '{}';", accountNumber);
+            return true;
+        } else {
+            logger.warn("Login failed for account '{}';", accountNumber);
+            return false;
+        }
     }
 }

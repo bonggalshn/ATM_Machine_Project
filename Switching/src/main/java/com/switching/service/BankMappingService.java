@@ -9,7 +9,7 @@ import java.io.InputStream;
 @Service
 public class BankMappingService {
 
-    public String setCharge(String bankCode, ISOMsg isoMessage){
+    public String setChargeInquiry(String bankCode, ISOMsg isoMessage){
         int charge;
         try{
             InputStream is = getClass().getResourceAsStream("/fields.xml");
@@ -26,14 +26,37 @@ public class BankMappingService {
                     break;
             }
 
-            System.out.println("Give charge: "+charge);
             isoMessage.set(4, (Integer.parseInt(isoMessage.getString(4))+charge)+"");
             result = isoMessage.pack();
             return new String(result);
 
         }catch (Exception e){
-            System.out.println("Bank Mapping Service.");
-            System.out.println("setCharge.\n"+e.getMessage());
+            return "BMS.setCharge: "+e.getMessage();
+        }
+    }
+
+    public String setChargeTransfer(String bankCode, ISOMsg isoMessage){
+        int charge;
+        try{
+            InputStream is = getClass().getResourceAsStream("/fields.xml");
+            GenericPackager packager = new GenericPackager(is);
+            isoMessage.setPackager(packager);
+            byte[] result;
+
+            switch (bankCode){
+                case "002":
+                    charge = 6500;
+                    break;
+                default:
+                    charge = 0;
+                    break;
+            }
+
+            isoMessage.set(4, (Integer.parseInt(isoMessage.getString(4))-charge)+"");
+            result = isoMessage.pack();
+            return new String(result);
+
+        }catch (Exception e){
             return "BMS.setCharge: "+e.getMessage();
         }
     }
@@ -42,7 +65,6 @@ public class BankMappingService {
         try{
             switch (bankCode){
                 case "002":
-                    System.out.println("Bank code : 002");
                     return "http://localhost:8081/transfer/ReceiveExternalInquiry";
                 default:
                     return "404";
@@ -58,7 +80,6 @@ public class BankMappingService {
         try{
             switch (bankCode){
                 case "002":
-                    System.out.println("Bank code : 002");
                     return "http://localhost:8081/transfer/ReceiveExternalTransfer";
                 default:
                     return "404";
