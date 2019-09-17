@@ -83,7 +83,10 @@ public class WithdrawalHelper {
                         Integer.parseInt(isoMessange.getString(4)));
                 System.out.println("Tarik tunai berhasil.");
             }else {
-                System.out.println("Transaksi tidak dapat dilakukan.");
+                if(isoMessange.getString(39).equals("51"))
+                    System.out.println("Saldo Anda tidak mencukupi.");
+                else
+                    System.out.println("Transaksi tidak dapat dilakukan.");
             }
 
         } catch (Exception e) {

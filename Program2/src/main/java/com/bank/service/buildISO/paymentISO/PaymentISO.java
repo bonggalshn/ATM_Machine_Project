@@ -12,11 +12,11 @@ import java.util.Date;
 public class PaymentISO {
     private static final Logger logger = LoggerFactory.getLogger(PaymentISO.class);
 
-    public String internetPaymentInquiryResponse(ISOMsg isoMessage, String internetCompanyName, boolean status) {
+    public String internetPaymentInquiryResponse(ISOMsg isoMessage, String internetCompanyName, String status) {
         try {
             if (internetCompanyName.length() > 20)
                 internetCompanyName = internetCompanyName.substring(0, 20);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getMessage());
         }
         try {
@@ -39,16 +39,13 @@ public class PaymentISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "05");
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
             isoMsg.set(48, "0");
             isoMsg.set(49, "840");
-            isoMsg.set(54,isoMessage.getString(54));
+            isoMsg.set(54, isoMessage.getString(54));
             isoMsg.set(62, "0");
             isoMsg.set(63, "0");
             isoMsg.set(102, internetCompanyName);
@@ -61,7 +58,7 @@ public class PaymentISO {
         }
     }
 
-    public String internetPaymentResponse(ISOMsg isoMessage, String internetCompanyName, boolean status) {
+    public String internetPaymentResponse(ISOMsg isoMessage, String internetCompanyName, String status) {
         if (internetCompanyName.length() > 20)
             internetCompanyName = internetCompanyName.substring(0, 20);
         try {
@@ -84,10 +81,7 @@ public class PaymentISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            if (status == true)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "05");
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");

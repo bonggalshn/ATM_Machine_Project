@@ -31,9 +31,9 @@ public class TransferExternalService {
 
         Customer beneficiary = accountService.findByAccountNumber(beneficiaryNumber);
 
-        boolean status = false;
+        String status = "05";
         if (beneficiary != null)
-            status = true;
+            status = "00";
 
         logger.info("Receive transfer inquiry from account '{}', amount: '{}'",
                 isoMessage.getString(2),
@@ -49,15 +49,14 @@ public class TransferExternalService {
         String beneficiaryNumber = isoMessage.getString(102);
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         try {
             Customer beneficiary = accountService.findByAccountNumber(beneficiaryNumber);
             beneficiary.setBalance(beneficiary.getBalance() + amount);
             accountService.update(beneficiary);
-            status = true;
+            status = "00";
         } catch (Exception e) {
             logger.error("Method: receiveExternalTransfer, Error: {}", e.getMessage());
-            status = false;
         }
 
         String response = ISOBuilder.ExternalTransferISOresponse(isoMessage, status);

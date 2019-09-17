@@ -24223,3 +24223,175 @@
 2019-09-17 20:08:45,401 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
 2019-09-17 20:08:45,407 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000016500';
 2019-09-17 22:33:22,864 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 22:36:29,002 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 22:36:29,009 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000400000'; Account: '12345'
+2019-09-17 22:43:49,391 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 22:44:52,095 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 22:44:52,103 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000400000'; Account: '12345'
+2019-09-17 22:49:19,667 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 22:49:38,898 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 22:49:38,906 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cash withdraw from ATM 'localhost:8090'; Amount: '000000400000'; Account: '12345'
+2019-09-17 23:10:05,962 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 23:10:46,798 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 23:10:46,809 INFO com.bank.service.TransferService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: '0'; Amount: '000000100000';
+2019-09-17 23:16:36,715 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Login success for account '12345';
+2019-09-17 23:16:36,721 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Transfer inquiry created for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000106500';
+2019-09-17 23:21:23,124 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 32780 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 23:21:23,126 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 23:21:23,126 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 23:21:36,109 ERROR org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:62)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:530)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2076)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2050)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2030)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:403)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1777)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1195)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1041)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1102)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1054)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:484)
+	... 11 common frames omitted
+2019-09-17 23:21:41,145 INFO com.bank.AtmApplication [main] Started AtmApplication in 18.253 seconds (JVM running for 23.89)
+2019-09-17 23:22:20,096 INFO com.bank.client.Client [main] ATM localhost:8090 used.
+2019-09-17 23:22:36,142 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Login success for account '12345';
+2019-09-17 23:22:36,148 INFO com.bank.service.TransferExternalService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Transfer inquiry created for Account: '12345' to Beneficiary: '0123' (Bank code: '002'); Amount: '000000106500';
+2019-09-17 23:34:28,070 INFO com.bank.client.Client [main] ATM localhost:8091 used.
+2019-09-17 23:34:36,444 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 36051 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 23:34:36,445 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 23:34:36,446 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 23:34:49,466 ERROR org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:62)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:530)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2076)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2050)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2030)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:403)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1777)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1195)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1041)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1102)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1054)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:484)
+	... 11 common frames omitted
+2019-09-17 23:34:54,503 INFO com.bank.AtmApplication [main] Started AtmApplication in 18.285 seconds (JVM running for 23.965)
+2019-09-17 23:35:04,574 ERROR org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:62)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:530)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2076)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2050)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2030)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:403)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1777)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1195)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1041)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1102)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1054)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:484)
+	... 11 common frames omitted
+2019-09-17 23:35:14,951 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] Login success for account '12345';
+2019-09-17 23:35:25,019 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] Login success for account '12345';
+2019-09-17 23:38:01,782 INFO com.bank.AtmApplication [main] Starting AtmApplication on Bonggals-MacBook-Pro.local with PID 37277 (/Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2/target/classes started by bonggalbaringinsiahaan in /Users/bonggalbaringinsiahaan/Documents/G2Academy/Proyek/Project/Program2)
+2019-09-17 23:38:01,785 DEBUG com.bank.AtmApplication [main] Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-09-17 23:38:01,785 INFO com.bank.AtmApplication [main] The following profiles are active: rpc,server
+2019-09-17 23:38:06,320 INFO com.bank.client.Client [main] ATM localhost:8091 used.
+2019-09-17 23:38:17,074 ERROR org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:62)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:530)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2076)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2050)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2030)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:403)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1777)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1195)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1041)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1102)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1054)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:484)
+	... 11 common frames omitted
+2019-09-17 23:38:22,111 INFO com.bank.AtmApplication [main] Started AtmApplication in 20.576 seconds (JVM running for 26.221)
+2019-09-17 23:38:32,173 ERROR org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:62)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:530)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2076)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2050)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2030)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:403)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1777)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1195)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1041)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1102)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1054)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:484)
+	... 11 common frames omitted
+2019-09-17 23:38:37,260 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Login success for account '12345';
+2019-09-17 23:38:37,267 INFO com.bank.controller.WithdrawalController [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Cash withdraw from ATM 'localhost:8091'; Amount: '000000400000'; Account: '12345'
+2019-09-17 23:39:08,041 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Login success for account '12345';
+2019-09-17 23:39:15,151 ERROR com.bank.client.Client [main] For input string: ""
+2019-09-17 23:39:34,777 INFO com.bank.service.AccountService [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Login success for account '12345';

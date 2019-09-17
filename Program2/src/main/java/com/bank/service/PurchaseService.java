@@ -30,19 +30,21 @@ public class PurchaseService {
         String pinNumber = isoMessage.getString(52);
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         Customer customer = new Customer();
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             customer = accountService.findByAccountNumber(accountNumber);
-            if (customer.getBalance() > amount) {
-                status = true;
+            if (customer.getBalance() >= amount) {
+                status = "00";
+            }else{
+                status = "51";
             }
         }
 
         Customer beneficiary = accountService.findByAccountNumber(institutionCode(productCode));
         if (beneficiary == null) {
             beneficiary = new Customer();
-            status = false;
+            status = "05";
         }
 
         String response = purchaseISO.phoneCreditInquiryISOResponse(isoMessage, customer, beneficiary, status);
@@ -57,7 +59,7 @@ public class PurchaseService {
         String beneficiaryNumber = isoMessage.getString(62);
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         try{
             Customer customer = accountService.findByAccountNumber(accountNumber);
             Customer beneficiary = accountService.findByAccountNumber(beneficiaryNumber);
@@ -71,13 +73,11 @@ public class PurchaseService {
             accountService.update(customer);
             accountService.update(beneficiary);
 
-            status = true;
+            status = "00";
         }catch (Exception e){
             logger.error(e.getMessage());
-            status = false;
         }
 
-        System.out.println("\n\nSTATUS: "+status);
         String response = purchaseISO.phoneCreditISOResponse(isoMessage, status);
         logger.info("Purchasing performed for Account: '{}' to '{}'; Amount: '{}';",
                 isoMessage.getString(2),

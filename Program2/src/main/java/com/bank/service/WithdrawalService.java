@@ -32,15 +32,17 @@ public class WithdrawalService {
         String pinNumber = isoMessage.getString(52);
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         Customer customer;
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             customer = accountService.findByAccountNumber(accountNumber);
             if (customer != null) {
-                if (customer.getBalance() > amount && amount % 50000 == 0) {
-                    status = true;
+                if (customer.getBalance() >= amount && amount % 50000 == 0) {
+                    status = "00";
                     customer.setBalance((customer.getBalance() - amount));
                     accountService.update(customer);
+                } else {
+                    status = "51";
                 }
             }
         }
@@ -53,7 +55,7 @@ public class WithdrawalService {
         return response;
     }
 
-    private String buildISO(ISOMsg isoMessage, boolean status) {
+    private String buildISO(ISOMsg isoMessage, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -74,12 +76,7 @@ public class WithdrawalService {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");

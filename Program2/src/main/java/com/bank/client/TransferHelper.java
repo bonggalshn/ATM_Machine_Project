@@ -93,7 +93,10 @@ public class TransferHelper {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
         if (!isoMessage.getString(39).equals("00")) {
-            System.out.println("Transaksi tidak dapat dilakukan");
+            if (isoMessage.getString(39).equals("51"))
+                System.out.println("Saldo Anda tidak mencukupi.");
+            else
+                System.out.println("Transaksi tidak dapat dilakukan");
             return;
         }
 
@@ -133,7 +136,10 @@ public class TransferHelper {
                             logger.info("Account '{}' perform '{}' CASH WITHDARWAL", result.getString(2), Integer.parseInt(result.getString(4)));
                             System.out.println("Transaksi Berhasil");
                         } else {
-                            System.out.println("Transaksi Gagal");
+                            if (result.getString(39).equals("51"))
+                                System.out.println("Saldo Anda tidak mencukupi.");
+                            else
+                                System.out.println("Transaksi Gagal");
                         }
                         break here;
                     case 2:
@@ -303,7 +309,10 @@ public class TransferHelper {
         ISOMsg isoMessage = isoUtil.stringToISO(message);
 
         if (!isoMessage.getString(39).equals("00")) {
-            System.out.println("Transaksi tidak dapat dilakukan");
+            if (isoMessage.getString(39).equals("51"))
+                System.out.println("Saldo Anda tidak mencukupi.");
+            else
+                System.out.println("Transaksi tidak dapat dilakukan.");
             return;
         }
 
@@ -336,9 +345,11 @@ public class TransferHelper {
                         ISOMsg isoResponse = isoUtil.stringToISO(response);
 
                         if (isoResponse.getString(39).equals("00"))
-                            System.out.println("\n\nTransaksi berhasil");
+                            System.out.println("\n\nTransaksi berhasil.");
+                        if (isoResponse.getString(39).equals("51"))
+                            System.out.println("\n\nSaldo Anda tidak mencukupi.");
                         else
-                            System.out.println("\n\nTransaksi gagal");
+                            System.out.println("\n\nTransaksi gagal.");
                         break here;
                     case 2:
                         System.out.println("Transaksi dibatalkan.");

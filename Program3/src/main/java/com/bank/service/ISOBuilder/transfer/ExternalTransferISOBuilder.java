@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ExternalTransferISOBuilder {
-    public String ExternalInquiryISOresponse(ISOMsg isoMessage, Customer beneficiary, boolean status, int amount) {
+    public String ExternalInquiryISOresponse(ISOMsg isoMessage, Customer beneficiary, String status, int amount) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -30,12 +30,7 @@ public class ExternalTransferISOBuilder {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
@@ -64,7 +59,7 @@ public class ExternalTransferISOBuilder {
         }
     }
 
-    public String ExternalTransferISOresponse(ISOMsg isoMessage, boolean status) {
+    public String ExternalTransferISOresponse(ISOMsg isoMessage, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -85,12 +80,7 @@ public class ExternalTransferISOBuilder {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "54");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");

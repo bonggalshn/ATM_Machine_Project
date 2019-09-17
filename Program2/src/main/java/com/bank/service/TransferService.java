@@ -32,20 +32,21 @@ public class TransferService {
         int amount = Integer.parseInt(isoMessage.getString(4));
         String beneficiaryNumber = isoMessage.getString(102);
 
-        boolean status = false;
+        String status = "05";
         Customer customer = null;
         Customer beneficiaryAccount = null;
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             customer = accountService.findByAccountNumber(accountNumber);
             beneficiaryAccount = accountService.findByAccountNumber(beneficiaryNumber);
             if (customer != null && beneficiaryAccount != null) {
-                if (customer.getBalance() > amount) {
-
+                if (customer.getBalance() >= amount) {
                     if (beneficiaryAccount.getAccountName().length() > 20)
                         beneficiaryAccount.setAccountName(beneficiaryAccount.getAccountName().substring(0, 20));
                     if (beneficiaryAccount.getAccountNumber().length() > 20)
                         beneficiaryAccount.setAccountNumber(beneficiaryAccount.getAccountNumber().substring(0, 20));
-                    status = true;
+                    status = "00";
+                }else{
+                    status = "51";
                 }
             }
         }
@@ -60,7 +61,7 @@ public class TransferService {
         return response;
     }
 
-    private String buildISOInquiry(ISOMsg isoMessage, Customer customer, Customer beneficiary, boolean status) {
+    private String buildISOInquiry(ISOMsg isoMessage, Customer customer, Customer beneficiary, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -85,12 +86,7 @@ public class TransferService {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
@@ -133,14 +129,13 @@ public class TransferService {
         sender.setBalance(sender.getBalance() - amount);
         beneficiary.setBalance(beneficiary.getBalance() + amount);
 
-        boolean status = false;
+        String status = "05";
         try {
             accountService.update(sender);
             accountService.update(beneficiary);
-            status = true;
+            status = "00";
         } catch (Exception e) {
             logger.error(e.getMessage());
-            status = false;
         }
 
 
@@ -153,7 +148,7 @@ public class TransferService {
 
     }
 
-    private String buildISOTransfer(ISOMsg isoMessage, Customer benefeiciary, boolean status) {
+    private String buildISOTransfer(ISOMsg isoMessage, Customer benefeiciary, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -174,11 +169,7 @@ public class TransferService {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
+            isoMsg.set(39, status);
 
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");

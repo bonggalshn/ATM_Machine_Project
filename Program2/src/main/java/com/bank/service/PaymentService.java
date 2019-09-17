@@ -30,14 +30,16 @@ public class PaymentService {
         String internetCompanyNumber = isoMessage.getString(102);
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         Customer company = new Customer();
         Customer customer;
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             company = accountService.findByAccountNumber(internetCompanyNumber);
             customer = accountService.findByAccountNumber(accountNumber);
-            if (customer.getBalance() > amount) {
-                status = true;
+            if (customer.getBalance() >= amount) {
+                status = "00";
+            } else {
+                status = "51";
             }
         }
 
@@ -56,7 +58,7 @@ public class PaymentService {
         Customer company = accountService.findByAccountNumber(internetCompanyNumber);
         Customer customer = accountService.findByAccountNumber(accountNumber);
 
-        boolean status = false;
+        String status = "05";
         try {
             if (company != null) {
                 customer.setBalance(customer.getBalance() - amount);
@@ -64,11 +66,10 @@ public class PaymentService {
 
                 accountService.update(customer);
                 accountService.update(company);
-                status = true;
+                status = "00";
             }
         } catch (Exception e) {
             logger.error(e.getMessage());
-            status = false;
         }
 
 

@@ -93,6 +93,8 @@ public class PaymentHelper {
 
                 if (isoMsgResponse.getString(39).equals("00")) {
                     System.out.println("Transaksi berhasil");
+                } else if (isoMsgResponse.getString(39).equals("51")) {
+                    System.out.println("Saldo Anda tidak mencukupi");
                 } else {
                     System.out.println("Transaksi gagal");
                 }

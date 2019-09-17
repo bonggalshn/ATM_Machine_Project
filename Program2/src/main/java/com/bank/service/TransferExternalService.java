@@ -31,7 +31,7 @@ public class TransferExternalService {
 
         String externalResponse = "";
         externalResponse = ClientHelper.sendData(message, "http://localhost:8082/switching/transferInquiry/transfer");
-        if(externalResponse.equals("05")){
+        if (externalResponse.equals("05")) {
             return "05";
         }
         isoMessage = isoUtil.stringToISO(externalResponse);
@@ -42,12 +42,14 @@ public class TransferExternalService {
 
         int amount = Integer.parseInt(isoMessage.getString(4));
 
-        boolean status = false;
+        String status = "05";
         Customer issuer;
         if (accountService.checkAccount(accountNumber, pinNumber)) {
             issuer = accountService.findByAccountNumber(accountNumber);
-            if (issuer.getBalance() > amount) {
-                status = true;
+            if (issuer.getBalance() >= amount) {
+                status = "00";
+            } else {
+                status = "51";
             }
         }
 
@@ -62,7 +64,7 @@ public class TransferExternalService {
         return response;
     }
 
-    private String buildISOExternalInquiryResponse(ISOMsg isoMessage, boolean status) {
+    private String buildISOExternalInquiryResponse(ISOMsg isoMessage, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -83,12 +85,7 @@ public class TransferExternalService {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
@@ -125,16 +122,15 @@ public class TransferExternalService {
 
 //        isoUtil.printISOMessage(isoMessage);
 
-        boolean status = false;
+        String status = "05";
         try {
             Customer issuer = accountService.findByAccountNumber(isoMessage.getString(2));
             issuer.setBalance(issuer.getBalance() - Integer.parseInt(isoMessage.getString(4)));
 //            System.out.println(issuer);
             accountService.update(issuer);
-            status = true;
+            status = "00";
         } catch (Exception e) {
             logger.error(e.getMessage());
-            status = false;
         }
 
         String response = buildISOTransferResponse(isoMessage, status);
@@ -148,7 +144,7 @@ public class TransferExternalService {
         return response;
     }
 
-    private String buildISOTransferResponse(ISOMsg isoMessage, boolean status) {
+    private String buildISOTransferResponse(ISOMsg isoMessage, String status) {
         try {
             InputStream is = getClass().getResourceAsStream("/fields.xml");
             GenericPackager packager = new GenericPackager(is);
@@ -169,12 +165,7 @@ public class TransferExternalService {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "54");
-
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");

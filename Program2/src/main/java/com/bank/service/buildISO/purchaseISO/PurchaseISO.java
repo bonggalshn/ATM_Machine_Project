@@ -13,7 +13,8 @@ import java.util.Date;
 
 public class PurchaseISO {
     private static final Logger logger = LoggerFactory.getLogger(PurchaseISO.class);
-    public String phoneCreditInquiryISOResponse(ISOMsg isoMessage, Customer customer, Customer beneficiary, boolean status) {
+
+    public String phoneCreditInquiryISOResponse(ISOMsg isoMessage, Customer customer, Customer beneficiary, String status) {
         if (beneficiary.getAccountName().length() > 20)
             beneficiary.setAccountName(beneficiary.getAccountName().substring(0, 20));
         try {
@@ -36,10 +37,7 @@ public class PurchaseISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            if (status)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "51");
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
@@ -58,7 +56,7 @@ public class PurchaseISO {
         }
     }
 
-    public String phoneCreditISOResponse(ISOMsg isoMessage, boolean status) {
+    public String phoneCreditISOResponse(ISOMsg isoMessage, String status) {
         if (isoMessage.getString(102).length() > 20) {
             String companyName = isoMessage.getString(102).substring(0, 20);
         }
@@ -83,10 +81,7 @@ public class PurchaseISO {
             isoMsg.set(32, "00000000000");
             isoMsg.set(33, "00000000000");
             isoMsg.set(37, "000000000000");
-            if (status == true)
-                isoMsg.set(39, "00");
-            else
-                isoMsg.set(39, "05");
+            isoMsg.set(39, status);
             isoMsg.set(41, "12340001");
             isoMsg.set(42, "000000000000000");
             isoMsg.set(43, "0000000000000000000000000000000000000000");
