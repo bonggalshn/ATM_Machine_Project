@@ -346,10 +346,13 @@ public class TransferHelper {
 
                         if (isoResponse.getString(39).equals("00"))
                             System.out.println("\n\nTransaksi berhasil.");
-                        if (isoResponse.getString(39).equals("51"))
-                            System.out.println("\n\nSaldo Anda tidak mencukupi.");
-                        else
-                            System.out.println("\n\nTransaksi gagal.");
+                        else {
+                            if (isoResponse.getString(39).equals("51")) {
+                                System.out.println("\n\nSaldo Anda tidak mencukupi.");
+                            } else {
+                                System.out.println("\n\nTransaksi gagal.");
+                            }
+                        }
                         break here;
                     case 2:
                         System.out.println("Transaksi dibatalkan.");

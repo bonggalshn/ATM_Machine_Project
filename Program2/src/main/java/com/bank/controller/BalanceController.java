@@ -18,6 +18,7 @@ public class BalanceController {
 
     @PostMapping(value = "/info", produces = "application/json; charset=UTF-8")
     public String BalanceInfo(@RequestBody String message) {
+        System.out.println(message);
         return balanceService.process(message);
     }
 

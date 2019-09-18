@@ -1,8 +1,6 @@
 package com.bank.controller;
 
-import com.bank.Util.ISOUtil;
 import com.bank.service.TransferExternalService;
-import org.jpos.iso.ISOMsg;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("transfer")
 public class TransferController {
     private static final Logger logger = LoggerFactory.getLogger(TransferController.class);
-    ISOUtil isoUtil=new ISOUtil();
     private TransferExternalService transferExternalService;
 
     public TransferController(TransferExternalService transferExternalService) {
